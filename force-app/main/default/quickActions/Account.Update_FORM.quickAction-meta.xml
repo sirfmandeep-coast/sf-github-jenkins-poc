@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CRM-5806</description>
+    <flowDefinition>Update_FORME</flowDefinition>
+    <icon>Appy_Pawsome</icon>
+    <label>Update FORM</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

@@ -1,0 +1,51 @@
+<apex:page controller="ShowCurrentRatesController" showHeader="false">
+    <style>
+        iframe { pointer-events: none; }
+        .hidden-overlay--large-percent{font-size: 150%}
+        .hidden-overlay--large-rem{font-size: 1.5rem}
+        .hidden-overlay--large-rem{font-size: 1.5em}
+        .hidden-overlay--large-px{font-size: 20px}
+    </style>
+    
+    <script language="javascript">
+        window.addEventListener('DOMContentLoaded', function () {
+            var isCompatible = false;
+            if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+                isCompatible = false;
+            } else if (navigator.userAgent.indexOf("Edg") != -1) {
+                isCompatible = true;
+            } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+                isCompatible = true;
+            } else if (navigator.userAgent.indexOf("Safari") != -1) {
+                isCompatible = false;
+            } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+                isCompatible = false;
+            } else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) { //IF IE > 10
+                isCompatible = false;
+            } else {
+                isCompatible = false;
+            }
+            if(isCompatible == true){
+                document.getElementById('iframePDF').style.display = 'block';
+                document.getElementById('warningMessage').style.display = 'none';
+            } 
+            else{
+                document.getElementById('warningMessage').style.display = 'block';
+                document.getElementById('iframePDF').style.display = 'none';
+            }
+
+        });
+    </script>
+    <div id="iframePDF" style="display:none;">
+        <apex:iframe src="data:application/pdf;base64,{!versionData}" height="1200px" scrolling="false" width="100%"/>    
+    </div>
+    <div id="warningMessage" class="hidden-overlay hidden-overlay--large-percent" style="display:none;">
+        <center><strong>This web browser is not compatible to show the rate sheet.  Please try latest version of Chrome or Edge.</strong></center>
+    </div>
+    <!--
+    <iframe src="https://{!contentHostname}/sfc/servlet.shepherd/version/renditionDownload?rendition=SVGZ&versionId={!contentVersionId}#zoom=30"  scrolling="false" id="theIframe" width="100%" height="1200px" frameBorder="0"/>
+    -->
+    <!--
+    <apex:iframe src="https://{!contentHostname}/sfc/servlet.shepherd/version/renditionDownload?rendition=SVGZ&versionId={!contentVersionId}"  scrolling="false" id="theIframe" width="100%" height="1200px" frameBorder="0"/>
+    -->
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Remade Salesforce Scheduler Flow. Trying to return to closer to OOTB.
+
+CRM-2709 https://coastcapital.atlassian.net/browse/CRM-2709
+CRM-2178 https://coastcapital.atlassian.net/browse/CRM-2178</description>
+    <flowDefinition>CCS_Appointment_Scheduler_v3</flowDefinition>
+    <label>New Appointment</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Occupation__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>Occupation, Retirement, Business Owner, Professional Education, Credentials, Professional Successes, Accomplishments</inlineHelpText>
+    <label>Occupation</label>
+    <length>3000</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

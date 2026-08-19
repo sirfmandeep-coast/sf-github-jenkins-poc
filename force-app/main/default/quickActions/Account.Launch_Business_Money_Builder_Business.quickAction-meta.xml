@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Launches BMB as per new requirements in CRM-6557.This replaces existing BMB action</description>
+    <flowDefinition>Account_SCR_Create_BMB_for_Business</flowDefinition>
+    <label>Launch Business Money Builder</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

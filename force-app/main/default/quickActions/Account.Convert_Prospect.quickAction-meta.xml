@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CRM-849 - Allows User to Convert a Prospect.</description>
+    <flowDefinition>RecordType_Update_Account</flowDefinition>
+    <label>Convert Prospect</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

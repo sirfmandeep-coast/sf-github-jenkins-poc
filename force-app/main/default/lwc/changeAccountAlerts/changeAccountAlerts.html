@@ -1,0 +1,66 @@
+<template>
+  <lightning-quick-action-panel header="Change Account Alerts">
+    <template if:false={isLoadingCompleted}>
+      <div class="slds-is-relative" style="min-height: 10vh;">
+          <lightning-spinner alternative-text="Loading..." size="medium">
+          </lightning-spinner>
+      </div>
+    </template>
+    <template if:true={isLoadingCompleted}>
+      <div class="slds-clearfix">
+        <div class="slds-grid slds-float_right">
+          <lightning-button variant="Neutral" label="Prev" onclick={handlePrev} disabled={disablePrevButton}></lightning-button>
+          <lightning-button variant="brand" label="Next" onclick={handleNext} class="slds-m-left_x-small" disabled={disableNextButton}></lightning-button>
+        </div>
+      </div>
+      <div class="slds-m-top_small slds-border_bottom">
+        <lightning-input type="date" name="Date Form Received" label="Date Form Received" value={dateFormReceived} class="dateCmp" onchange={dateValidator}></lightning-input>
+      </div>
+      <div class="slds-m-top_small slds-border_top">
+        <br/>
+        <div>
+          <lightning-input type="toggle" label="OptOutAll" unchecked message-toggle-active="" message-toggle-inactive="" onchange={optOutAll}></lightning-input>
+        </div>
+        <template if:true={isOptOutAllSelected}>
+          <br/>
+          <lightning-icon icon-name="utility:warning" alternative-text="Warning!" title="Warning...." variant="warning"></lightning-icon>&nbsp;&nbsp;&nbsp;
+          Click on Save Alerts Change button below will opt out all account preferences.
+        </template>
+        <template if:false={isOptOutAllSelected}>
+          <template if:false={isEmailAvailable}>
+            <div class="slds-m-top_xx-small ">
+              <lightning-icon icon-name="utility:warning" alternative-text="Warning!" title="Warning...." variant="warning"></lightning-icon>&nbsp;&nbsp;&nbsp;
+              <font color = "Orange">No Email Available.Please update the Email in the T24 application.</font>
+            </div>
+          </template>
+          <template if:true={isPhoneAvailable}>
+            <div class="slds-m-top_xx-small ">
+              <lightning-icon icon-name="utility:warning" alternative-text="Warning!" title="Warning...." variant="warning"></lightning-icon>&nbsp;&nbsp;&nbsp;
+              <font color = "red">No Phone Available. Please update the Phone in the T24 application.</font>
+            </div>
+          </template>
+          <template if:true={isDeviceAvailable}>
+            <div class="slds-m-top_xx-small ">
+              <lightning-icon icon-name="utility:warning" alternative-text="Warning!" title="Warning...." variant="warning"></lightning-icon>&nbsp;&nbsp;&nbsp;
+              <font color = "red">No Mobile App Available. Please ask the customer to download the CCS Mobile App.</font>
+            </div>
+          </template>
+                  
+          <template if:true={testVariable}>
+            <template if:true={listShownOnPage}>
+              <template for:each={listShownOnPage} for:item="alertPrefs" for:index="index">
+                <c-role-alert-change key={alertPrefs.accountNumber} preflist={alertPrefs} onupdated={handleUpdate} onpagevalidationerror={handlePageValidationError} isemailavailable={isEmailAvailable} isphoneavailable={isPhoneAvailable} isdeviceavailable={isDeviceAvailable} ></c-role-alert-change>
+              </template>
+            </template>
+          </template>
+        </template>
+            
+      </div>
+      <div slot="footer" class="slds-align_absolute-center slds-p-around_xxx-small ">
+        <lightning-button variant="neutral" label="Close" onclick={closeAction}></lightning-button>
+        <lightning-button variant="brand" label="Save Alerts Change" class="slds-m-left_x-small" onclick={handleSavePrefence} if:true={pageValidationError} disabled></lightning-button>
+        <lightning-button variant="brand" label="Save Alerts Change" class="slds-m-left_x-small" onclick={handleSavePrefence} if:false={pageValidationError}></lightning-button>
+      </div>
+    </template>        
+  </lightning-quick-action-panel>
+</template>

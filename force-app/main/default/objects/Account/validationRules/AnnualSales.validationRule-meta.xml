@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AnnualSales</fullName>
+    <active>true</active>
+    <description>Annual_Sales__c cannot be negative.
+CRM-4979</description>
+    <errorConditionFormula>Annual_Sales__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Annual_Sales__c</errorDisplayField>
+    <errorMessage>Annual Sales cannot be a negative value.</errorMessage>
+</ValidationRule>

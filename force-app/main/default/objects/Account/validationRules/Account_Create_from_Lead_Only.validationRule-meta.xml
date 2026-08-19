@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Create_from_Lead_Only</fullName>
+    <active>true</active>
+    <description>Account can only be created from Lead</description>
+    <errorConditionFormula>AND
+( 
+  $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+  $Profile.Name &lt;&gt; &apos;CCS System Administrator&apos;,
+  $Profile.Name &lt;&gt; &apos;CCS Data Migration&apos;,
+  $Profile.Name &lt;&gt; &apos;CCS Integration&apos;,
+  $Profile.Name &lt;&gt; &apos;CCS Odaseva&apos;,
+  ISNEW(), 
+  NOT(Lead_Created__c),
+  NOT(CONTAINS(RecordType.DeveloperName,&quot;Prospect&quot;)),
+  $User.No_Validation__c = false
+)</errorConditionFormula>
+    <errorMessage>Account can only be created from Lead</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreatedByDivision__c</fullName>
+    <description>Created By Division</description>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>Please input the Line of Business the Prospect originated from.</inlineHelpText>
+    <label>Created By Division</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>TextArea</type>
+</CustomField>

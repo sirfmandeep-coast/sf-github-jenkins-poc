@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <!-- Existing technical metadata from your current manifest -->
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!-- Core Account object metadata.
+         For standard objects like Account, use CustomObject with member Account. -->
+    <types>
+        <members>Account</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- Account fields -->
+    <types>
+        <members>Account.*</members>
+        <name>CustomField</name>
+    </types>
+
+    <!-- Account record types -->
+    <types>
+        <members>Account.*</members>
+        <name>RecordType</name>
+    </types>
+
+    <!-- Account validation rules -->
+    <types>
+        <members>Account.*</members>
+        <name>ValidationRule</name>
+    </types>
+
+    <!-- Account field sets -->
+    <types>
+        <members>Account.*</members>
+        <name>FieldSet</name>
+    </types>
+
+    <!-- Account list views -->
+    <types>
+        <members>Account.*</members>
+        <name>ListView</name>
+    </types>
+
+    <!-- Account compact layouts -->
+    <types>
+        <members>Account.*</members>
+        <name>CompactLayout</name>
+    </types>
+
+    <!-- Account custom buttons and links -->
+    <types>
+        <members>Account.*</members>
+        <name>WebLink</name>
+    </types>
+
+    <!-- Account quick actions -->
+    <types>
+        <members>Account.*</members>
+        <name>QuickAction</name>
+    </types>
+
+    <!-- Account page layouts.
+         If Account-* does not retrieve layouts in your org, replace this with exact layout names. -->
+    <types>
+        <members>Account-*</members>
+        <name>Layout</name>
+    </types>
+
+    <!-- Account sharing rules, if configured -->
+    <types>
+        <members>Account</members>
+        <name>SharingRules</name>
+    </types>
+
+    <!-- Duplicate rules.
+         This may retrieve all duplicate rules, not only Account-specific ones. Useful for POC baseline. -->
+    <types>
+        <members>*</members>
+        <name>DuplicateRule</name>
+    </types>
+
+    <!-- Matching rules.
+         This may retrieve all matching rules, not only Account-specific ones. Useful for POC baseline. -->
+    <types>
+        <members>*</members>
+        <name>MatchingRule</name>
+    </types>
+
+    <!-- Permission sets.
+         This is useful if your Account field POC includes FLS/object permission changes.
+         It can be noisy because it retrieves all permission sets. -->
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+
+    <!-- Permission set groups, if your org uses them -->
+    <types>
+        <members>*</members>
+        <name>PermissionSetGroup</name>
+    </types>
+
+    <!-- Lightning record pages.
+         This may retrieve all FlexiPages because Account record pages are not always cleanly scoped by Account name. -->
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <version>67.0</version>
+</Package>

@@ -1,0 +1,33 @@
+<apex:page sidebar="false" showHeader="false">
+<script src="/support/console/50.0/integration.js" type="text/javascript"></script>
+
+<script type = "text/javascript">
+window.onload=function()      
+{              
+  const form = document.createElement('form');
+  form.method = 'POST'
+  form.action = '{!JSENCODE($CurrentPage.parameters.url)}'+ '/SalesForce/OpenDMC';
+  form.target = '_blank'
+
+  const hiddenField = document.createElement('input');
+  hiddenField.type = 'hidden';
+  hiddenField.name = 'DMCID';
+  hiddenField.value = '{!JSENCODE($CurrentPage.parameters.dmcid)}';
+  form.appendChild(hiddenField);
+
+  document.body.appendChild(form);
+  form.submit();
+  
+  if(sforce.console.isInConsole()) {
+    sforce.console.getEnclosingTabId(closeSubtab);
+  }   
+  
+  window.history.go(-1);
+};   
+
+var closeSubtab = function closeSubtab(result) {
+  !sforce.console.closeTab(result.id);
+};
+</script>
+
+</apex:page>

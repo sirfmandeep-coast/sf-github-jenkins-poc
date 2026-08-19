@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Name_Required_on_Indv_Prospects</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordType_Name__c = &apos;Individual Prospect&apos;,
+ISBLANK(FirstName)
+)</errorConditionFormula>
+    <errorMessage>First name field on prospects is required.</errorMessage>
+</ValidationRule>

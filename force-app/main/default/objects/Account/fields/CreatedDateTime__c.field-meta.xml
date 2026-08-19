@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreatedDateTime__c</fullName>
+    <description>CRM-1536 - Captures the DateTime the Prospect record is first created. This is captured via the Account PB.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Created DateTime</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIN_Opt_Out__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, the member has requested to opt out of the use of their Social Insurance Number. This implies that they do not want their SIN used for any marketing purposes. CRM-6354.</description>
+    <label>SIN Opt Out</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

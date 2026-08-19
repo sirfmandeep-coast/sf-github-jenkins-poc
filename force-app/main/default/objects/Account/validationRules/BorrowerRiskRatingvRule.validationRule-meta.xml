@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BorrowerRiskRatingvRule</fullName>
+    <active>false</active>
+    <description>This will fire when any of the 3 fields are entered, but not when all three are blank. If at least one is filled in, all three must be. CRM-4364</description>
+    <errorConditionFormula>AND(
+    OR
+    (
+      ISBLANK(TEXT(LGD_Rating__c)),
+      ISBLANK(TEXT(PD_Rating__c)),
+      ISBLANK(TEXT(BRR_Scorecard_Used__c))
+    ),
+NOT(
+    AND(ISBLANK(TEXT(LGD_Rating__c)), 
+        ISBLANK(TEXT(PD_Rating__c)),
+        ISBLANK(TEXT(BRR_Scorecard_Used__c))
+       )
+   )
+)</errorConditionFormula>
+    <errorMessage>PD Rating, LGD Rating and BRR Scorecard Used must have a value before saving.</errorMessage>
+</ValidationRule>

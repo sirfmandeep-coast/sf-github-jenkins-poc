@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinServ__TimeHorizon__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Time Horizon</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-2 Years</fullName>
+                <default>false</default>
+                <label>0-2 Years</label>
+            </value>
+            <value>
+                <fullName>3-4 Years</fullName>
+                <default>false</default>
+                <label>3-4 Years</label>
+            </value>
+            <value>
+                <fullName>5-9 Years</fullName>
+                <default>false</default>
+                <label>5-9 Years</label>
+            </value>
+            <value>
+                <fullName>10-20 Years</fullName>
+                <default>false</default>
+                <label>10-20 Years</label>
+            </value>
+            <value>
+                <fullName>21+ Years</fullName>
+                <default>false</default>
+                <label>21+ Years</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

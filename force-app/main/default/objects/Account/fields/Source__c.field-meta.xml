@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <description>Motus Project Jira# MBM-110</description>
+    <externalId>false</externalId>
+    <formula>IF(FinServ__BranchCode__c==&apos;A34&apos;, &apos;Motus&apos;,
+ IF( ISBLANK(FinServ__BranchCode__c),&apos;&apos;,&apos;CCS&apos;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

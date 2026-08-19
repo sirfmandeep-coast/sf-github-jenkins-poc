@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CRM-500 - Allows Users to be scheduled for appointments using lightning scheduler</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS_Lightning Scheduler</label>
+    <license>LightningSchedulerPsl</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>LightningSchedulerUserAccess</name>
+    </userPermissions>
+</PermissionSet>

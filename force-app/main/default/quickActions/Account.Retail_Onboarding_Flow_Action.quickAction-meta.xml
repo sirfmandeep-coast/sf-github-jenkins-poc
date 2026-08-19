@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Launches the &quot;Retail Member Onboarding&quot; screen flow. CRM-5976.</description>
+    <flowDefinition>CCS_Retail_Member_Onboarding</flowDefinition>
+    <label>Retail Onboarding</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

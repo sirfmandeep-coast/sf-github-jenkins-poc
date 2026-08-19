@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Index_NOT_1_to_100</fullName>
+    <active>false</active>
+    <description>Engagement Index can only be 1-100.</description>
+    <errorConditionFormula>AND
+(
+  NOT(ISBLANK(Engagement_Index__c)),
+  OR
+  (
+    Engagement_Index__c &lt; 1,
+    Engagement_Index__c &gt; 100
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Engagement_Index__c</errorDisplayField>
+    <errorMessage>*** DEACTIVATED CRM-1625 - Data updated via integration. vRule no longer required ***
+Engagement Index can only be 1-100. Please correct your data.</errorMessage>
+</ValidationRule>

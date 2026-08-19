@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>For Fraud department, per LTN-2126. Allows assignee to view the Score field on nCCS Citadel report object, and edit the &apos;Run Citadel&apos; checkbox on Accounts</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Enable Disable Run Citadel</label>
+</PermissionSet>

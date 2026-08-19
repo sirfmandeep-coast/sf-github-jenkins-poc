@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Deposit_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Banking_ID__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Date_of_Birth_Formula__c</columns>
+    <columns>Email_Formula__c</columns>
+    <columns>Legal_Address_Formula__c</columns>
+    <columns>Trust_Account_No__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FinServ__Status__c</field>
+        <operation>equals</operation>
+        <value>Active,Deceased,Regular</value>
+    </filters>
+    <label>My Deposit Accounts</label>
+    <sharedTo>
+        <group>CCS_System_Admins</group>
+        <group>External_Agents</group>
+    </sharedTo>
+</ListView>

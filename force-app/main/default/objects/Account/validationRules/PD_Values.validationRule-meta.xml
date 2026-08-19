@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PD_Values</fullName>
+    <active>false</active>
+    <description>CRM-3186 - Deprecated per CRM-3691</description>
+    <errorConditionFormula>OR
+(
+AND(ISBLANK(TEXT(PD_Rating__c)), NOT(ISBLANK(PD_Score__c))  ),
+ 
+AND(ISBLANK(PD_Score__c), NOT(ISBLANK(TEXT(PD_Rating__c)))  )
+)</errorConditionFormula>
+    <errorDisplayField>PD_Score__c</errorDisplayField>
+    <errorMessage>**** DEPRECATED **** Ensure both PD Rating and PD Score have a value.</errorMessage>
+</ValidationRule>

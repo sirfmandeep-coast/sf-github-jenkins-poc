@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Exec PermsetGroup</label>
+    <permissionSets>CCS_Exec_Permset</permissionSets>
+    <permissionSets>CCS_KYC_Object_R</permissionSets>
+    <permissionSets>CCS_Product_Review_and_Disclosure_CRE</permissionSets>
+    <permissionSets>CCS_Product_Review_and_Disclosure_R</permissionSets>
+    <permissionSets>CCS_Review</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

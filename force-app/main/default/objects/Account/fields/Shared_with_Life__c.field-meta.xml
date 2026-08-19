@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shared_with_Life__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>CRM-662 -- this field will be checked when a Life Referral is made. When the record is checked, the Member record is then shared with the Life Users</description>
+    <label>Shared with Life</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

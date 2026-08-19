@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>CCS_BMB_Temporary_Access</name>
+    </customPermissions>
+    <description>This is created for enabling few business users to access BMB during Predeploy week until Production Go Live</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS BMB Temporary Access</label>
+</PermissionSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Life PermsetGroup</label>
+    <permissionSets>CCS_Chatter_Visibility</permissionSets>
+    <permissionSets>CCS_Life_Permset</permissionSets>
+    <permissionSets>CCS_Lightning_Scheduler</permissionSets>
+    <permissionSets>CCS_MF_Licensed_Users</permissionSets>
+    <permissionSets>force__PipelineInspectionUser</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

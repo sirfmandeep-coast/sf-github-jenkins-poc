@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Broker</fullName>
+    <active>true</active>
+    <description>Represents a Broker / Agency</description>
+    <label>Broker</label>
+    <picklistValues>
+        <picklist>AC_Security_Questions__c</picklist>
+        <values>
+            <fullName>2 Additional Security Questions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Security Questions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Security Questions %2B 2 Enhanced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BRR_Scorecard_Used__c</picklist>
+        <values>
+            <fullName>Behavioural Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Income Producing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Org_Structure__c</picklist>
+        <values>
+            <fullName>Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Constituency Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documented or Victim Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Election</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Institutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government%2FPublic Body</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joint Ventures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer%27s General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notary Public%27s General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notary Public%27s Named Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Name Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnerships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Realtor%2FProperty Mngr%27s Named Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Proprietorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trusts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unincorporated Organization</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Org_Type__c</picklist>
+        <values>
+            <fullName>Banks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDIC Contact Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Named %28Agency%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Co-operative Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Constituency Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crown Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit Broker %28Agency%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documented trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Election</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Federal%2FProvincial Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Institutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Nations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorporated Association or Society</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joint Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer%27s General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer%27s Named Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited Partnership %28LP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Municipal%2FSchool%2FHosp%2FPublic Utility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notary Public%27s General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notary Publics Named Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Named Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Investors - Large Deposits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate Investors - Large Deposits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Realtor%2FProperty Mngr General Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Realtor%2FProperty Mngr%27s Named Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular with Shares</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SDB Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Proprietorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strata Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trusts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unincorporated Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited Liability %28ULC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Victim%27s Trust</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Classification_Change_Reason__c</picklist>
+        <values>
+            <fullName>Change in Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Death</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marital Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Classification__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AAA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__BorrowingHistory__c</picklist>
+        <values>
+            <fullName>Excellent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited to No History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moderate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__BorrowingPriorities__c</picklist>
+        <values>
+            <fullName>Build Equity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debt Consolidation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Capital Purchases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renovations</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__ClientCategory__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__CreditRating__c</picklist>
+        <values>
+            <fullName>Excellent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__CustomerSegment__c</picklist>
+        <values>
+            <fullName>Borrower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Term Growth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mass Affluent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mass Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Millennial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transactional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wealth Accumulation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__CustomerType__c</picklist>
+        <values>
+            <fullName>Borrower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relational</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transaction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__FinancialInterests__c</picklist>
+        <values>
+            <fullName>College Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Municipal Bonds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__IndividualType__c</picklist>
+        <values>
+            <fullName>Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__InvestmentExperience__c</picklist>
+        <values>
+            <fullName>Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sophisticated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__InvestmentObjectives__c</picklist>
+        <values>
+            <fullName>Growth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__KYCStatus__c</picklist>
+        <values>
+            <fullName>Completed - Invalid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed - Valid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Queue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__LastUsedChannel__c</picklist>
+        <values>
+            <fullName>Branch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__MarketingSegment__c</picklist>
+        <values>
+            <fullName>Female Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Net Worth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mass Affluent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Millennial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__PersonalInterests__c</picklist>
+        <values>
+            <fullName>Boating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>College Basketball</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Craft Beer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cycling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foodies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gardening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hiking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hockey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Literature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Explain%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Running</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skiing and Snowboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wine</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__ReviewFrequency__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biannually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi Monthly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__RiskTolerance__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low-Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium-High</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__ServiceModel__c</picklist>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bankrupt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Board Revoked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garnishment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential New Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regular</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FinServ__TimeHorizon__c</picklist>
+        <values>
+            <fullName>0-2 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-20 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21%2B Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-4 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5-9 Years</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Group_Risk_Rating__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NULL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal - Related Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trusts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LGD_Rating__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>J</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Life_Stage__c</picklist>
+        <values>
+            <fullName>Building my Career</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enjoying Retirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exploring my Options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Going to School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintaining my Career</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MDM_Classification__c</picklist>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PD_Rating__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Contact_Preference__c</picklist>
+        <values>
+            <fullName>Cell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS %28Text Message%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Contact_Time__c</picklist>
+        <values>
+            <fullName>Afternoon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Preference</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Privacy_Consent_Source__c</picklist>
+        <values>
+            <fullName>Booking Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Money Chat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PreQual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prospect_Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Converted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Rating__c</picklist>
+        <values>
+            <fullName>12 - Com-excellent-high</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 - Com-excellent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 - Com-excellent-low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22 - Com-good-high</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25 - Com-good</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28 - Com-Good-Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>32 - Com-satisfactory-high</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>34 - Acceptable %28Medium%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35 - Com-satisfactory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>36 - Acceptable %28High%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>38 - Com-satisfactory-low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>39 - Com-satisfactory-neg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>42 - Com-past Due Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 - Com-management Inv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48 - Com-substandard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>52 - Com-doubtful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>55 - Loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>58 - Com-loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 - Community Lending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>99 - Com-non Borrowing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sector__c</picklist>
+        <values>
+            <fullName>2010 Banks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2010 Sole Proprietor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020 Constituency Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2025 Election</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2110 General Partnerships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2120 Corporate Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2130 Limited Partnership %28LP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2210 Limited Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2220 Incorporated Association or Society</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2230 Co-operative Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2240 Strata Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2250 Crown Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2260 Unlimited Liability %28ULC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2310 Unincorporated Organizations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2410 Federal%2FProvincial Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2420 Municipal%2FSchool%2FHosp%2FPublic Utility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2610 Joint Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2710 Documented trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2710 Victim%27s Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3020 Insurance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

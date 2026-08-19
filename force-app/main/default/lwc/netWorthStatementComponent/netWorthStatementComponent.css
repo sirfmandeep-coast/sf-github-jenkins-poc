@@ -1,0 +1,8 @@
+:host {
+    --slds-c-card-footer-text-align: center;
+    --slds-c-card-footer-font-size: 15px;
+    }
+.info-icon{
+    --sds-c-icon-color-foreground-default: white;
+    --sds-c-icon-color-background: grey;
+}

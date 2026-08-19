@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="url"  />
+	<design:attribute name="mode"  />
+</design:component>

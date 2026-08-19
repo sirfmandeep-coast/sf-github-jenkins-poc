@@ -1,0 +1,37 @@
+<template>
+    
+        <lightning-card class="border-card">
+
+                <div class="slds-grid" slot="title" style="padding-top: 12px; padding-left: 16px;">
+                    <lightning-icon icon-name="standard:product_service_campaign" size="small" alternative-text="Bundled Services" title="Bundled Services"></lightning-icon>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Bundled Services</b>
+                </div>
+                <template if:true={noService}>           
+                    <p class="slds-p-horizontal_large">No bundled services available</p>
+                </template>
+                <template if:true={loyaltyProducts.length}> 
+                    <template if:true={isProfile}>
+                        <lightning-datatable
+                            key-field = "account"
+                            data={loyaltyProducts}
+                            columns={profileColumns}
+                            hide-checkbox-column
+                            hide-row-number-column> 
+                        </lightning-datatable>     
+                    </template>
+                    <template if:true={isFinancialAccount}>
+                        <lightning-datatable
+                            key-field = "account"
+                            data={loyaltyProducts}
+                            columns={financialAccountColumns}
+                            hide-checkbox-column
+                            hide-row-number-column>  
+                        </lightning-datatable>      
+                    </template>
+                </template>
+                <template if:true={hasError}>           
+                    <p class="slds-p-horizontal_large">Oops!, something happened when calling integration, please call helpdesk.</p>
+                </template>
+        </lightning-card>
+
+</template>

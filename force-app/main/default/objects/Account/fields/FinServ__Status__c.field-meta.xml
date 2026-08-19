@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinServ__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Potential New Member</fullName>
+                <default>false</default>
+                <label>Potential New Member</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+                <label>Deceased</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Board Revoked</fullName>
+                <default>false</default>
+                <label>Board Revoked</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Regular</fullName>
+                <default>false</default>
+                <label>Regular</label>
+            </value>
+            <value>
+                <fullName>Bankrupt</fullName>
+                <default>false</default>
+                <label>Bankrupt</label>
+            </value>
+            <value>
+                <fullName>Garnishment</fullName>
+                <default>false</default>
+                <label>Garnishment</label>
+            </value>
+            <value>
+                <fullName>De-marketed by CCS</fullName>
+                <default>false</default>
+                <label>De-marketed by CCS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

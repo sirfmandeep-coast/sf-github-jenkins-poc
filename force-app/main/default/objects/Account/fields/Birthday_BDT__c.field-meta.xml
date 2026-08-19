@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Birthday_BDT__c</fullName>
+    <description>Field is updated from the Business Discovery Tool object</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Birthday (BDT)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

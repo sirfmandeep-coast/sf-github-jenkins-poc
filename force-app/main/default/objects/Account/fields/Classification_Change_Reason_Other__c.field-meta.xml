@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classification_Change_Reason_Other__c</fullName>
+    <description>CRM-5813 - If Classification Change Reason Other, this field needs to be populated.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Classification Change Reason (Other)</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFMC_Filter__c</fullName>
+    <formula>IF( 
+OR(
+  CONTAINS(RecordType.Name, &quot;Prospect&quot;),
+  ISPICKVAL(FinServ__Status__c, &quot;Closed&quot;),
+  ISPICKVAL(FinServ__Status__c, &quot;Deceased&quot;),
+  AND (
+    CONTAINS(FinServ__BranchCode__c, &quot;A&quot;),
+    FinServ__BranchCode__c != &quot;A15&quot;
+  )
+)
+
+,true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SFMC_Exclude</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

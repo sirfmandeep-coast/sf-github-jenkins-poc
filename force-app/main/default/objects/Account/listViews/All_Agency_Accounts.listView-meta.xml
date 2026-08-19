@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Agency_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Banking_ID__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Legal_Address_Formula__c</columns>
+    <columns>Email_Formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RecordType_Name__c</field>
+        <operation>equals</operation>
+        <value>Broker</value>
+    </filters>
+    <filters>
+        <field>FinServ__Status__c</field>
+        <operation>equals</operation>
+        <value>Active,Regular</value>
+    </filters>
+    <label>All Agency Accounts</label>
+    <sharedTo>
+        <group>Agency_Admin</group>
+        <group>CCS_System_Admins</group>
+    </sharedTo>
+</ListView>

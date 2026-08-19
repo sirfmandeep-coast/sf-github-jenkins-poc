@@ -1,0 +1,171 @@
+<template>
+        <template if:false = {showNext}>
+            <template if:false={showNonManagedAssetModal}>
+                <template if:false={showOwnershipPage}>
+                <lightning-card>
+                   <div class = "slds-box slds-theme_alert-texture slds-theme_info" >
+                        <div><lightning-icon icon-name="utility:info" size="medium" class="info-icon"></lightning-icon></div>
+                        <div>
+                            The accuracy, completeness, and timeliness of this net worth statement is 
+                            based on the information provided by the member. Coast Capital has no obligation to update and it does not guarantee or 
+                            warranty the accuracy or completeness of this net worth statement or that the net worth statement will be free of 
+                            any errors or omissions. This net worth statement is only used as a guideline to facilitate discussions between 
+                            Coast Capital staff and the member, and is not relied on to make determinations for product or service approvals. 
+                        </div>
+                    </div>
+                    <div slot="actions">
+                        <lightning-button variant="brand" label="New" title="New" class="slds-m-around_x-small" onclick={handleNewNonManagedAsset}></lightning-button>
+                    </div> <br/>
+                    <lightning-card title="Assets">
+                        <lightning-card >
+                            <template if:true={ccsassetsList}>
+                                
+                                    <lightning-datatable
+                                                key-field="Id"
+                                                data={ccsassetsList}
+                                                columns={ccsManagedColumns}
+                                                hide-checkbox-column="true"
+                                                show-row-number-column="true"
+                                                draft-values={saveDraftValues}
+                                                onsave={handleCCSAssetLiabilityUpdation}
+                                                oncancel={handleAssetLiabilityAmountCancel}>
+                                    </lightning-datatable>
+                                
+                                </template>
+                            </lightning-card>
+                            <lightning-card >
+                                <template if:true={nonCCSAssetsList}>
+                                    
+                                        <lightning-datatable
+                                                key-field="Id"
+                                                data={nonCCSAssetsList}
+                                                columns={ccsNonManagedColumns}
+                                                hide-checkbox-column="true"
+                                                draft-values={saveDraftValues}
+                                                onsave={handleNonCCSAssetLiabilityUpdation}
+                                                oncancel={handleAssetLiabilityAmountCancel}
+                                                onrowaction={handleRowAction}
+                                                show-row-number-column="true">
+                                        </lightning-datatable>
+                                    
+                                </template>
+                            </lightning-card>
+                            <div slot="footer" class="slds-clearfix">
+                                <span class = "slds-float_right">Asset Sub Total: {totalAssets}</span>
+                            </div>
+
+                        </lightning-card>
+
+                    <lightning-card title="Liabilities">
+                            
+
+                            <lightning-card>
+                                <template if:true={ccsLiabilitiesList}>
+                                    
+                                        <lightning-datatable
+                                                key-field="Id"
+                                                data={ccsLiabilitiesList}
+                                                columns={ccsManagedColumns}
+                                                hide-checkbox-column="true"
+                                                show-row-number-column="true"
+                                                draft-values={saveDraftValues}
+                                                onsave={handleCCSAssetLiabilityUpdation}
+                                                oncancel={handleAssetLiabilityAmountCancel}>
+                                        </lightning-datatable>
+                                   
+                                </template>
+                            </lightning-card>
+
+                            <lightning-card>
+                                <template if:true={nonCCSLiabilitiesList}>
+                                    
+                                        <lightning-datatable
+                                                key-field="Id"
+                                                data={nonCCSLiabilitiesList}
+                                                columns={ccsNonManagedColumns}
+                                                hide-checkbox-column="true"
+                                                draft-values={saveDraftValues}
+                                                onsave={handleNonCCSAssetLiabilityUpdation}
+                                                oncancel={handleAssetLiabilityAmountCancel}
+                                                onrowaction={handleRowAction}
+                                                show-row-number-column="true">
+                                        </lightning-datatable>
+                                    
+                                </template>
+                            </lightning-card>
+                            <div slot="footer" class="slds-clearfix">
+                                <span class = "slds-float_right">Liability Sub Total: {totalLiabilities}</span>
+                            </div>
+                            
+                        </lightning-card>
+                        <div slot="footer" class="slds-clearfix">
+                            <br/>
+                            <span class="slds-box slds-theme_alert-texture slds-theme_info">Total Net Worth : {totalNetWorth}</span>
+                            <br/><br/><br/>
+                            <div class = "slds-box slds-theme_alert-texture slds-theme_info" >
+                            <div><lightning-icon icon-name="utility:info" size="medium" class="info-icon"></lightning-icon></div>
+                            <div>
+                                How Net Worth is calculated <br/>
+
+                                Total asset/liability amount is multiplied by the ownership % and used in the Sub Total calculations. 
+                                As an example if you and your partner are joint on a 20k investment and each of you have 50% ownership 
+                                the Subtotal for each party will equal 10k (50% of 20k). 
+                            </div>
+                        </div>
+                        </div>
+
+                        
+
+                </lightning-card>
+            </template>
+            </template>
+        </template>
+            
+            <!-- Template for New Asset Creation STARTED-->
+        <template if:false = {showNext}>
+            <template if:false={showOwnershipPage}>
+            <template if:true={showNonManagedAssetModal}>
+
+                <lightning-card title="New Asset/Liability">
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-2">
+                            <label for="FieldSelect">
+                                <abbr title="required" class="slds-required">*</abbr>Select Record Type
+                            </label>
+                            <select class="slds-select" name = "optionSelect" onchange={recTypeChangeHandler} >
+                                <option value="select">--SELECT--</option>
+                                <option value="CCSNonManagedAsset">Asset</option>
+                                <option value="CCSNonManagedLiability">Liability</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div slot="footer">
+                        <button class="slds-button slds-button_neutral"
+                                aria-label="Cancel and close" onclick={handleModalCancel}>Cancel</button>
+                            <!--<button class="slds-button slds-button_brand" onclick={handleAssetLiabilityCreation}>Save</button>-->
+                            <button class="slds-button slds-button_brand" onclick={handleNext}>Next</button>
+                    </div>
+                    
+                </lightning-card>
+            </template>
+            </template>
+        </template>
+
+        <template if:true = {showNext}>
+            <template if:false = {showOwnershipPage}>
+                <div class="slds-m-top_large" style="width: 80%;">
+                    <c-non-managed-assets rec-type-id = {selectedRecTypeId} rec-type-name = {selectedOption} 
+                    show-non-managed-asset-modal = {showNonManagedAssetModal} show-next = {showNext} onnewrecordcancelclick= {handleModalCancel} 
+                    onnewrecordsaveclick={handleAssetLiabilityCreation}></c-non-managed-assets>
+                </div>
+            </template>
+        </template>
+            <!-- Template for New Asset Creation ENDED-->
+
+        <template if:true = {showOwnershipPage}>
+                <div> 
+                    <c-asset-liability-ownership-component asset-liability-id = {assetRoleRecord} onjointownersaveclick = {handleJointOwnerCreation}></c-asset-liability-ownership-component>
+                </div>
+        </template>
+</template>

@@ -1,0 +1,13 @@
+.border-card {  
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 1px;
+    display: flow;
+    width: 100%;
+}
+
+
+.accordion-section-header-gray { 
+    --sds-c-accordion-summary-color-background: var(--lwc-colorBackground,rgb(243, 242, 242)); 
+    text-decoration: none;
+}

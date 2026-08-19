@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recreation__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>Sports &amp; Recreation, Personal Interests, Music and Reading Interests, Favorite Traditions, Travel, Charities, Other Causes Supported, Service Clubs &amp; Organizations, Alumni of Universities and/or Associations)</inlineHelpText>
+    <label>Recreation</label>
+    <length>3000</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,45 @@
+.green-utility-icon {
+    --slds-c-icon-color-foreground-default: #49A54C;
+}
+.red-utility-icon {
+    --slds-c-icon-color-foreground-default: #CB0015;
+}
+.gray-utility-icon {
+    --slds-c-icon-color-foreground-default: #BEBEBE;
+}
+.blue-utility-icon {
+    --slds-c-icon-color-foreground-default: blue;
+}
+.green-background-icon{
+    --slds-c-icon-color-background: #49A54C;
+        padding: 0.3rem;
+}
+.red-background-icon{
+    --slds-c-icon-color-background: #CB0015;
+        padding: 0.3rem;
+}
+.blue-background-icon{
+    --slds-c-icon-color-background: blue;
+        padding: 0.3rem;
+}
+.gray-background-icon{
+    --slds-c-icon-color-background: #BEBEBE;
+        padding: 0.3rem;
+}
+
+.my-card {  
+    border-radius: 2px;
+    padding: 1px;
+    display: inline-grid;;
+    width: 100%;
+}
+
+.my-card-child {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 1px;
+    margin: 1px;
+    float: left;
+    width: 99%;
+    display: inline;
+}

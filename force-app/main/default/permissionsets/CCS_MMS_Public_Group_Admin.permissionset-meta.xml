@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>MMS_Group_User_Admin</name>
+    </customPermissions>
+    <description>Allows a user to both see the home page link to the MMS Group Administration Flow and run the Flow. This gives them access to add and remove users to the currently 3 MMS groups who get auto assigned MMS and PreQual leads.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS MMS Public Group Admin</label>
+</PermissionSet>

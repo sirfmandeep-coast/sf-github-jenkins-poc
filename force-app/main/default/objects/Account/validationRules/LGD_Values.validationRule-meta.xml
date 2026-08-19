@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LGD_Values</fullName>
+    <active>false</active>
+    <description>CRM-3186 Deprecated per CRM-3691</description>
+    <errorConditionFormula>OR
+(
+AND(ISBLANK(TEXT(LGD_Rating__c)), NOT(ISBLANK(LGD_Score__c))  ),
+ 
+AND(ISBLANK(LGD_Score__c), NOT(ISBLANK(TEXT(LGD_Rating__c)))  )
+)</errorConditionFormula>
+    <errorDisplayField>LGD_Score__c</errorDisplayField>
+    <errorMessage>**** DEPRECATED **** Ensure both LGD Rating and LGD Score have a value.</errorMessage>
+</ValidationRule>

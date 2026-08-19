@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RetailKYCDate__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>The Created Date of the most recently created KYC record associated with this account, where the KYC Status field is &quot;Validated&quot;. Populated by the flow &quot;KYC SCR Create KYC from Account&quot;. This date refers only to individual members in a retail/personal context for KYCs performed within CRM. It does not include KYCs done in external systems (e.g. wealth systems like Dataphile), nor does it indicate KYCs done in a commercial context (e.g. for beneficial owners). CRM-6521.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Retail KYC Date</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

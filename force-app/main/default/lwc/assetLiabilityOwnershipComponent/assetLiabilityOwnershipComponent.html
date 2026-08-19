@@ -1,0 +1,35 @@
+<template>
+    <br/>
+    <template if:false={showNewJointOwnerCreationWindow}>
+        <lightning-card title="Ownership">
+            <div slot="actions">
+                <lightning-button variant="brand" label="Add Joint Owner" title="AddJointOwner" class="slds-m-around_x-small" onclick={handleNewJointOwner}></lightning-button>
+            </div> <br/>
+            <lightning-layout class="slds-border_bottom slds-border_top slds-border_right slds-border_left">
+            <div>
+                <template if:true={listOfAssetRoles}>
+                    <lightning-datatable
+                                key-field="Id"
+                                data={listOfAssetRoles}
+                                columns={ccsNonManagedAssetLiabilityRoleColumns}
+                                hide-checkbox-column="true"
+                                show-row-number-column="true"
+                                onrowaction={handleRowAction}
+                                draft-values={saveDraftValues}
+                                onsave={handleAssetLiabilityRoleOwnershipUpdation}
+                                oncancel={handleAssetLiabilityRoleOwnershipCancel}>
+                    </lightning-datatable>
+                </template>
+            </div>    
+                
+            </lightning-layout>
+            <div slot="footer">
+                <lightning-button variant="brand" label="Finish" title="Finish" class="slds-m-around_x-small" onclick={handleSave}></lightning-button>
+            </div> <br/>
+        </lightning-card>
+    </template>
+
+    <template if:true={showNewJointOwnerCreationWindow}>
+        <lightning-flow flow-api-name = "NWS_Joint_Ownership_Flow" flow-input-variables = {flowVariables} onstatuschange = {handleFlowStatusChange} ></lightning-flow>
+    </template>
+</template>

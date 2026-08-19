@@ -1,0 +1,6 @@
+<template>
+    <lightning-record-edit-form object-api-name={objectName} record-type-id={recordTypeId} >
+        <lightning-input-field variant="label-stacked" field-name={controllingField} onchange={handleControllingPicklistChange} required={isControllingFieldRequired} ></lightning-input-field>
+        <lightning-input-field variant="label-stacked" field-name={dependentField} onchange={handleDependentPicklistChange} required={isDependentFieldRequired} ></lightning-input-field>
+    </lightning-record-edit-form>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CL_Business_Prospect</fullName>
+    <fields>Name</fields>
+    <fields>Prospect_Type__c</fields>
+    <fields>Business_Org_Structure__c</fields>
+    <fields>Business_Org_Type__c</fields>
+    <fields>Phone</fields>
+    <fields>BillingAddress</fields>
+    <fields>Classification__c</fields>
+    <label>CL Business Prospect</label>
+</CompactLayout>

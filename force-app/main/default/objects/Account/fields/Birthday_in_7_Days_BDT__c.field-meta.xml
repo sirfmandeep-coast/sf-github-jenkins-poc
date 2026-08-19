@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Birthday_in_7_Days_BDT__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF
+(    
+  AND
+  (
+    DATE(YEAR(TODAY()),MONTH( Birthday_BDT__c ),DAY( Birthday_BDT__c )) &lt;= (TODAY() + 7), 
+    DATE(YEAR(TODAY()),MONTH( Birthday_BDT__c ),DAY( Birthday_BDT__c )) &gt;= (TODAY() - 7)
+   ),
+   IMAGE(&quot;/resource/BirthdayCupcake&quot;,&quot;Happy Birthday!&quot;, 32, 32) + &quot;   &quot; + TEXT(DAY(Birthday_BDT__c)) + &quot;-&quot; + 
+CASE(
+  MONTH( Birthday_BDT__c),
+  1, &quot;Jan&quot;,
+  2, &quot;Feb&quot;,
+  3, &quot;Mar&quot;,
+  4, &quot;Apr&quot;,
+  5, &quot;May&quot;,
+  6, &quot;Jun&quot;,
+  7, &quot;Jul&quot;,
+  8, &quot;Aug&quot;,
+  9, &quot;Sep&quot;,
+  10, &quot;Oct&quot;,
+  11, &quot;Nov&quot;,
+  &quot;Dec&quot;
+) + &quot;-&quot; + TEXT(YEAR(Birthday_BDT__c)),
+   NULL
+)</formula>
+    <label>Birthday in ±7 Days (BDT)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,104 @@
+<template>
+    <lightning-card>
+        <div style="padding:0.5rem;background:#3c4149">
+            <div class="slds-align_absolute-center slds-text-heading_small slds-text-color_inverse">
+                {preflistClone.accountTitle} - {preflistClone.accountNumber}
+            </div>
+        </div>
+        <br/>
+        <div class="slds-border_bottom">
+            <template if:true={preflistClone.alert}>
+                <template for:each={preflistClone.alert} for:item="alt" for:index="outIndex">
+                    <div key={alt.key} class="slds-grid">
+                        <lightning-input key={alt.type} label="Type" name="type" value={alt.type} disabled></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!--<lightning-input class="thresholdCmp" key={alt.threshold} data-value ="threshold" data-id={outIndex} label="Threshold" name="threshold" value={alt.threshold} onblur={handleChanges}></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                        <template if:true={alt.showOdpLimit}>
+                            <lightning-input class="thresholdCmp" key={alt.threshold} data-value ="threshold" data-id={outIndex} label="Threshold" name="threshold" value={alt.threshold} onblur={handleChanges} message-when-pattern-mismatch ="Value must be numeric and lower than 9,999,999" pattern="^(\d{1,7}|\d{0,7}\.\d{1,2})$"></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <!--<lightning-formatted-number class="thresholdCmp" key={alt.threshold} data-value ="threshold" data-id={outIndex} label="Threshold" name="threshold" value={alt.threshold} onblur={handleChanges} pattern="^[0-9.]*$"></lightning-formatted-number> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                            <lightning-input key={alt.limitAmount} data-value ="limitAmount" data-id={outIndex} label="Limit Amount" name="Limit Amount" value={preflistClone.limitAmount} onblur={handleChanges} disabled></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </template> 
+                        <template if:false={alt.showOdpLimit}>
+                            <lightning-input class="thresholdwithlimitCmp" key={alt.threshold} data-value ="threshold" data-id={outIndex} label="Threshold" name="threshold" value={alt.threshold} onblur={handleChanges} message-when-pattern-mismatch ="Value must be numeric and lower than 9,999,999" pattern="^(\d{1,7}|\d{0,7}\.\d{1,2})$"></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <lightning-input style="display: none; margin-right:20px;" key={alt.threshold} data-value ="odpLimit" data-id={outIndex} label="ODP Limit" name="ODP Limit" value={preflistClone.odpLimit} onblur={handleChanges}></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </template> 
+                        <template if:true={alt.preferences}>
+                            <template for:each={alt.preferences} for:item="pref" for:index="index">
+                                <!-- Conditional rendering of toggles based on the profile information -->
+
+                                <!-- Email Toggle rendering -->
+                                <template if:true={pref.isEmailType}>
+                                    <template if:true={isemailavailable}>
+                                        <template if:true={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} checked message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </template>
+                                        <template if:false={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} unchecked message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </template>
+                                    </template>
+                                    <template if:false={isemailavailable}>
+                                        <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} unchecked disabled message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                    </template>
+                                </template>
+                                
+                                <!-- Email Toggle rendering -->
+                                
+                                <!-- Phone Toggle rendering -->
+                                <template if:true={pref.isPhoneType}>
+                                    <template if:true={isphoneavailable}>
+                                        <template if:true={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} checked message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </template>
+                                        <template if:false={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} unchecked message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </template>
+                                    </template>
+                                    <template if:false={isphoneavailable}>
+                                        <template if:true={pref.optIn}>
+                                        <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} checked disabled message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                            </template>
+                                         <template if:false={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} unchecked disabled message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                         </template>
+                                    </template>
+                                </template>
+                                <!-- Phone Toggle rendering -->
+                                
+                                <!-- Device Toggle rendering -->
+                                <template if:true={pref.isDeviceType}>
+                                    <template if:true={isdeviceavailable}>
+                                        <template if:true={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} checked message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </template>
+                                        <template if:false={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} unchecked message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </template>
+                                    </template>
+                                    <template if:false={isdeviceavailable}>
+                                        <template if:true={pref.optIn}>
+                                        <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} checked disabled message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                        </template>
+                                        <template if:false={pref.optIn}>
+                                            <lightning-input class="slds-m-top_medium" data-value="toggle" data-id={outIndex} data-name={pref.deliveryChannel} value={pref.optIn} name={index} key={pref.key} type="toggle" onchange={handleChanges} unchecked disabled message-toggle-active={pref.deliveryChannel} message-toggle-inactive={pref.deliveryChannel} ></lightning-input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                        </template>
+                                    </template>
+                                </template>
+                                <!-- Device Toggle rendering -->
+                                
+                                <!-- Conditional rendering of toggles based on the profile information -->
+                            </template>
+                        </template>
+                    </div>
+                </template>
+            </template>
+            <br/>
+       </div>
+    </lightning-card>
+</template>

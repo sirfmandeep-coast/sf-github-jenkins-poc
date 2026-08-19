@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CRM-5893</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS HISA Promotion</label>
+    <recordTypeVisibilities>
+        <recordType>Promotion_Member__c.HISA_Promotion</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

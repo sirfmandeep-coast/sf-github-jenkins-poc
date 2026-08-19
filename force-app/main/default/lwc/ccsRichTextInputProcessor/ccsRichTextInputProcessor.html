@@ -1,0 +1,11 @@
+<template>
+    <div>
+        <label for="richInput">Copy the table from the Worldsource calculator and paste it into the box
+            below. Please note that only text table (without any images) is allowed for pasting:</label>
+        <div id="richInput" contenteditable="true"
+            style="min-height: 100px; max-height: 1000px; overflow-y: auto; width: 100%; white-space: pre-wrap;"
+            class="slds-box slds-theme_default" onpaste={onPasteHandler}>
+
+        </div>
+    </div>
+</template>

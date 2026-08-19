@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RandomNumber__c</fullName>
+    <externalId>false</externalId>
+    <formula>VALUE( 
+ 
+
+RIGHT(TEXT( 
+ 
+
+SQRT( 
+ 
+
+(VALUE( 
+ 
+
+TEXT(SECOND(TIMEVALUE(NOW())))&amp; 
+ 
+
+TEXT(DAY(DATEVALUE(NOW())))&amp; 
+ 
+
+TEXT(MONTH(DATEVALUE(NOW())))&amp; 
+ 
+
+TEXT(YEAR(DATEVALUE(NOW())))&amp; 
+ 
+
+TEXT(MINUTE(TIMEVALUE(NOW()))) 
+ 
+
+)*(VALUE(RIGHT(  CRM_ID_AutoNumber__c ,2))+1) 
+ 
+
+) 
+ 
+
+) 
+ 
+
+) 
+ 
+
+,6 
+ 
+
+) 
+ 
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RandomNumber</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

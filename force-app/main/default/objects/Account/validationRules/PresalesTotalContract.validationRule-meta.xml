@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PresalesTotalContract</fullName>
+    <active>true</active>
+    <description>Presales_as_of_Total_Contract__c cannot be negative; 0-100% permitted
+CRM-4979</description>
+    <errorConditionFormula>OR(
+Presales_as_of_Total_Contract__c &gt; 1.0,
+Presales_as_of_Total_Contract__c &lt; 0.0
+)</errorConditionFormula>
+    <errorDisplayField>Presales_as_of_Total_Contract__c</errorDisplayField>
+    <errorMessage>Presales as % of Total Contract range is 0-100%</errorMessage>
+</ValidationRule>

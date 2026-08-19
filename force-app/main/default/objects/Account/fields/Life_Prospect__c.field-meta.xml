@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Life_Prospect__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>CRM-1536 - checkbox field to confirm this is a Life Prospect record. Only Sys Admins and Life User profile can edit this field. All other Users can view.</description>
+    <inlineHelpText>Field is Checked when a Life User creates the Prospect record.</inlineHelpText>
+    <label>Life Prospect?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

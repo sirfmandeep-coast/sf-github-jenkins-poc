@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>Created by: Paul Cartwright
+Date: 04/10/2022
+Should open a URL in a new page</description>
+</AuraDefinitionBundle>

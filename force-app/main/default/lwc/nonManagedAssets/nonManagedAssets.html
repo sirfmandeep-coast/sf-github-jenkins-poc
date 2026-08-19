@@ -1,0 +1,59 @@
+<template>
+    <div class="slds-border_bottom slds-border_top slds-border_right slds-border_left">
+        <lightning-card title="Add New Asset/Liability">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="horizontal-large">
+                    <lightning-layout class="slds-border_bottom slds-border_top slds-border_right slds-border_left">
+                        <lightning-layout-item flexibility="auto" padding="horizontal-large">
+                    <lightning-input data-id="RecordTypeName" value={recTypeName} label="Category" disabled="true"></lightning-input>
+                        <br/>        
+                        <template if:true={showpicklist}>
+                            <lightning-combobox label="Type"
+                                name="FinServ__AssetsAndLiabilitiesType__c"
+                                options={controllingPicklist} 
+                                value={selectedControlling}
+                                onchange={fetchDependentValue}
+                                required="true">
+                            </lightning-combobox>
+                        </template>
+                        <template if:true={showdependent}>
+                            <br/>
+                            <lightning-combobox label="Sub Type"
+                                name="Sub_Type__c"
+                                options={finalDependentVal} 
+                                value={selectedControlling}
+                                disabled={dependentDisabled}
+                                onchange={handleSubTypeChange}
+                                required="true">
+                            </lightning-combobox>
+                        </template> 
+                        <br/>
+                        <lightning-input type="number" name="Amount" label="Amount" onchange={handleAmountChange} required="true"></lightning-input>
+                        <br/>
+                    <lightning-combobox name="progress"
+                            label="Source"
+                            value={value}
+                            placeholder="-Select-"
+                            options={options}
+                            onchange={handleSourceChange} >
+                        </lightning-combobox>   
+                        <br/>
+                        <template if:true={displayMaturityDateField}>
+                            <lightning-input type="date" label="Maturity Date" onchange={handleMaturityDate}></lightning-input>
+                            <br/>
+                        </template>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div slot="footer">
+                <button class="slds-button slds-button_neutral"
+                        aria-label="Cancel and close" onclick={handleModalCancel}>Cancel</button>
+                    <!--<button class="slds-button slds-button_brand" onclick={handleAssetLiabilityCreation}>Save</button>-->
+                    
+                    <button class="slds-button slds-button_brand" onclick={handleSave}>Next</button>
+            </div>
+        </lightning-card>
+        </div>
+    
+</template>

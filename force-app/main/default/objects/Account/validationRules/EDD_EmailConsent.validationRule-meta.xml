@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EDD_EmailConsent</fullName>
+    <active>false</active>
+    <description>Multiple selections are not permitted. Please select the applicable checkbox for the consent which the member has provided.</description>
+    <errorConditionFormula>AND( Consent_to_Electronic_Delivery_of_Docume__c = TRUE,
+ Consent_to_General_Email_Communication__c = TRUE )</errorConditionFormula>
+    <errorMessage>Important: 
+You have selected both checkboxes which is not permitted. Please click on the Finish button and you will be directed back to the prior screen where you can select the applicable checkbox for the consent which the member has provided.</errorMessage>
+</ValidationRule>

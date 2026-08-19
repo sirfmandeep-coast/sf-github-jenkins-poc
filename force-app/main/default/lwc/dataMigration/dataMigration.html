@@ -1,0 +1,94 @@
+<template>
+    <template if:true={errorMessage}>
+        <lightning-card>
+            <div style="padding:0.5rem;background:#3c4149">
+                <div class="slds-align_absolute-center slds-text-heading_small slds-text-color_inverse">
+                    {errorMessage}
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={refreshToken}>
+        <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout multiple-rows horizontal-align="center" vertical-align="center">
+                <lightning-layout-item size="6" small-device-size="12" medium-device-size="12" large-device-size="12" padding="around-medium">
+                        
+                        <lightning-card icon-name="standard:product_transfer">
+                            <lightning-radio-group name="mirgrationType" label="Migration Type" options={migrationTypeOptions} value="scenario" type="button" onchange={handleMigrationTypeChange}></lightning-radio-group>
+                                <template lwc:if={showByScenario}>
+                                    <lightning-combobox name="predefinedScenario" value={selectedValue} label = "Predefined Scenarios" placeholder="Select Scenario" options={predefinedScenarioOptions} onchange={handleScenarioChange} required></lightning-combobox>
+                                </template>     
+                            <div slot="footer">
+                                <lightning-button label="Data Migration" title="Data Migration" onclick={dataMigration} >
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                            
+
+                        <lightning-card>
+                           
+                            <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                                <lightning-layout multiple-rows horizontal-align="center" vertical-align="end">
+                                    <lightning-layout-item size="6" small-device-size="12" medium-device-size="8" large-device-size="6" padding="around-medium">
+                                        <lightning-formatted-rich-text value={processInfo}></lightning-formatted-rich-text> 
+                                        <div class="slds-scroll-anchor"></div> 
+                                    </lightning-layout-item> 
+                                </lightning-layout>
+                            </div>
+                                            
+   
+                        </lightning-card>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+       
+    </template>
+    
+        <template if:true={showLogInModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning-button-icon
+                            class="slds-modal__close"
+                            onclick={handleLoginCancel}
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            title="Close">
+                        </lightning-button-icon>
+                        <h2  id="modal-heading-log-interaction" class="slds-modal__title slds-hyphenate">Log In</h2>
+                    </header>
+                    <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-update-class">
+                        <lightning-radio-group name="authenticationType" label="Authentication Type" required options={authenticationTypeOptions} value={authenticationMode} onchange={handleAuthenticationTypeChange} type="radio"></lightning-radio-group>
+                        <lightning-input 
+                            type="username" 
+                            label="Username" 
+                            value={username}
+                            onchange={handleInputChange}
+                            data-id="username">
+                        </lightning-input>
+                        <lightning-input 
+                            type="password" 
+                            label="Password" 
+                            value={password}
+                            onchange={handleInputChange}
+                            data-id="password">
+                        </lightning-input>
+        
+                    </div>
+                    <footer class="slds-modal__footer">
+                            <lightning-button
+                                variant="brand"
+                                label="Login"
+                                title="Login"
+                                onclick={handleLogin}
+                                class="slds-var-m-left_x-small">
+                            </lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    
+</template>

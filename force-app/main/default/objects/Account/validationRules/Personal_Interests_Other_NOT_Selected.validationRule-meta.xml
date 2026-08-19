@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personal_Interests_Other_NOT_Selected</fullName>
+    <active>true</active>
+    <description>US-60: If a user does not select &quot;Other&quot; from the personal interests picklist, but completes the &quot;other personal interests&quot; field, tell the user this field is only necessary if the members interest is not listed in the picklist above</description>
+    <errorConditionFormula>AND( 
+ NOT(ISBLANK( Personal_Interests_Other__c )), 
+ NOT(INCLUDES( FinServ__PersonalInterests__c , &quot;Other (Explain)&quot;) 
+))</errorConditionFormula>
+    <errorDisplayField>Personal_Interests_Other__c</errorDisplayField>
+    <errorMessage>This field is only required if you selected &quot;Other&quot; as one of the members personal interests.</errorMessage>
+</ValidationRule>

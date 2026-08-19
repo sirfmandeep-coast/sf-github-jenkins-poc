@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Referral_Auth_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox used to indicate if the member is a Primary Account Owner of a Joint Investment Account</description>
+    <label>Primary Referral Auth Required</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

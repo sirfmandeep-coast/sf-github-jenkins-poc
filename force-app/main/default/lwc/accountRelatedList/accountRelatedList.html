@@ -1,0 +1,367 @@
+<template>
+   <!-- <lightning-card  title="Account Quick Action center" icon-name="standard:proposition">-->
+    <lightning-card>
+        <div class="slds-m-left_small">
+            <lightning-icon icon-name='standard:lead' class="lead1Hovered" size='medium' title='Leads' onmouseover={handleLead1HoverChange} onmouseout={handleOutHoverChange} onclick={handleLead}></lightning-icon> 
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle ">{leadCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <lightning-icon icon-name='standard:opportunity' class="opp1Hovered" size='medium' title='Opportunities' onmouseover ={handleOpp1HoverChange} onmouseout={handleOutHoverChange} onclick={handleOpportunity}></lightning-icon>
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle">{opptyCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <lightning-icon icon-name='standard:case' class="case1Hovered" size='medium' title='Cases' onmouseover={handleCase1HoverChange} onmouseout={handleOutHoverChange} onclick={handleCase}></lightning-icon> 
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle ">{caseCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <lightning-icon icon-name='utility:moneybag' class="moneychat1Hovered" size='medium' title='Money Chats' onmouseover={handleMoneyChat1HoverChange} onmouseout={handleOutHoverChange} onclick={handleMoneyChat}></lightning-icon> 
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle ">{moneyChatCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <lightning-icon icon-name='standard:event' class="event1Hovered" size='medium' title='Events' onmouseover={handleEvent1HoverChange} onmouseout={handleOutHoverChange} onclick={handleEvent}></lightning-icon> 
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle ">{eventCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <lightning-icon icon-name='standard:task' class="task1Hovered" size='medium' title='Tasks' onmouseover={handleTask1HoverChange} onmouseout={handleOutHoverChange} onclick={handleTask}></lightning-icon> 
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle ">{taskCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <!-- Added for CRM-4474 Date: July 19th 2022 -->
+            <lightning-icon icon-name='standard:document' class="prodNotes1Hovered" size='medium' title='Product Notes' onmouseover={handleProdNotes1HoverChange} onmouseout={handleOutHoverChange} onclick={handleProdNotes}></lightning-icon> 
+            <div class="circleContainer slds-p-bottom_large">
+                <div class="circle ">{prodNotesCount}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            
+        </div>
+        
+       
+
+        <template if:true={showLeads}>
+            <template if:false={isLeadsNull}>
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <template for:each={leadList} for:item="lead">
+                                <li key={lead.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-contact" title={lead.Name}>
+                                                <lightning-icon icon-name='standard:lead' alternative-text='Leads' size='medium' title={lead.Name}></lightning-icon> 
+                                                <span class="slds-assistive-text">Lead</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <!-- Tooltip-->
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={lead.Id} onmouseleave={handleLeadMouseout}>
+                                                <h3 class="slds-tile__title slds-truncate" >
+                                                    <a href={lead.url}  data-id ={lead.Id} onmouseenter={handleLeadMouseover} >{lead.Name}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-tile__detail">
+                                                <dl class="slds-wrap">
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Lead Rec Type Id">Lead and Referral Record Type :&nbsp;{lead.RecordType.Name}</dt>
+                                                    <dd class="slds-item_detail slds-truncate" title="Product">Product :&nbsp;{lead.Product__c}</dd>
+                                                </dl>
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <a class="slds-card__footer-action" href="#" onclick={navigateToLeadRelatedList}>View All
+                            <span class="slds-assistive-text">Leads</span>
+                        </a>
+                    </footer>
+                </article>
+            </template>
+        </template>
+
+       
+
+        <template if:true={showOppties}>
+            <template if:false={isOptyNull}>
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <template for:each={opptyList} for:item="opp">
+                                <li key={opp.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-opportunity" title={opp.Name}>
+                                                <lightning-icon icon-name='standard:opportunity' alternative-text='contact' size='medium' title={opp.Name}></lightning-icon> 
+                                                <span class="slds-assistive-text">Opportunity</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={opp.Id} onmouseleave={handleOppMouseout}>
+                                                <h3 class="slds-tile__title slds-truncate">
+                                                    <a href={opp.url} data-id ={opp.Id} onmouseenter={handleOppMouseover} >{opp.Name}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-tile__detail">
+                                                <dl class="slds-wrap">
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Stage">Stage :&nbsp;&nbsp;{opp.StageName}</dt>
+                                                    <dd class="slds-item_detail slds-truncate" title="CloseDate">CloseDate :&nbsp;{opp.CloseDate}</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <a class="slds-card__footer-action" href="#" onclick={navigateToOpportunityRelatedList}>View All
+                            <span class="slds-assistive-text">Opportunities</span>
+                        </a>
+                    </footer>
+                </article>
+            </template>
+        </template>
+
+       
+
+        <template if:true={showCases}>
+            <template if:false={isCasesNull}>
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <template for:each={caseList} for:item="cases">
+                                <li key={cases.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-case" title={cases.CaseNumber}>
+                                                <lightning-icon icon-name='standard:case' alternative-text='Cases' size='medium' title={cases.CaseNumber}></lightning-icon> 
+                                                <span class="slds-assistive-text">Case</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <!-- Tooltip-->
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={cases.Id} onmouseleave={handleCaseMouseout}>
+                                                <h3 class="slds-tile__title slds-truncate" >
+                                                    <a href = {cases.url}  data-id ={cases.Id}  data-value={cases.Id} onmouseenter={handleCaseMouseover}>{cases.CaseNumber}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-tile__detail">
+                                                <dl class="slds-wrap">
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Title">Case Type :&nbsp; 
+                                                        <lightning-formatted-rich-text value= {cases.RecordTypeImage__c}></lightning-formatted-rich-text> </dt>
+                                                    <dd class="slds-item_detail slds-truncate" title="Email">Status :&nbsp;{cases.Status}</dd>
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Phone">Owner Name :&nbsp;{cases.Owner.Name}</dt>
+                                                </dl>
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <a class="slds-card__footer-action" href="#" onclick={navigateToCasesRelatedList}>View All
+                            <span class="slds-assistive-text">Cases</span>
+                        </a>
+                    </footer>
+                </article>
+            </template>
+        </template>
+
+        
+            <template if:true={showMoneyChats}>
+                <template if:false={isMoneyChatsNull}>
+                    <article class="slds-card">
+                        <div class="slds-card__body slds-card__body_inner">
+                            <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                                <template for:each={moneyChatList} for:item="moneyChat">
+                                    <li key={moneyChat.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                        <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                            <div class="slds-media__figure">
+                                                <span class="slds-icon_container slds-icon-standard-case" title={moneyChat.Name}>
+                                                    <lightning-icon icon-name='utility:moneybag' alternative-text='Money Chats' size='medium' title={moneyChat.Name}></lightning-icon> 
+                                                    <span class="slds-assistive-text">Money Chat</span>
+                                                </span>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <!-- Tooltip-->
+                                                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={moneyChat.Id} onmouseleave={handleMoneyChatMouseout}>
+                                                    <h3 class="slds-tile__title slds-truncate" >
+                                                        <a href={moneyChat.url}  data-id ={moneyChat.Id} onmouseenter={handleMoneyChatMouseover} >{moneyChat.Name}</a>
+                                                    </h3>
+                                                </div>
+                                                <div class="slds-tile__detail">
+                                                    <dl class="slds-wrap">
+                                                        <!--<dt class="slds-item_label slds-text-color_weak slds-truncate" title="Title">Money Chat # :&nbsp;&nbsp;{moneyChat.Name}</dt>-->
+                                                        <dd class="slds-item_detail slds-truncate" title="Email">Created Date :&nbsp;{moneyChat.CreatedDate}</dd>
+                                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Phone">Status :&nbsp;{moneyChat.Status__c}</dt>
+                                                    </dl>
+                                                </div>
+                                            
+                                            </div>
+                                            
+                                        </article>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                        <footer class="slds-card__footer">
+                            <a class="slds-card__footer-action" href="#" onclick={navigateToMoneyChatRelatedList}>View All
+                                <span class="slds-assistive-text">Money Chats</span>
+                            </a>
+                        </footer>
+                    </article>
+                </template>
+            </template>
+        
+
+        <template if:true={showEvents}>
+            <template if:false={isEventsNull}>
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <template for:each={eventList} for:item="eve">
+                                <li key={eve.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-case" title={eve.Name}>
+                                                <lightning-icon icon-name='standard:event' alternative-text='Events' size='medium' title={eve.Name}></lightning-icon> 
+                                                <span class="slds-assistive-text">Event</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <!-- Tooltip-->
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={eve.Id} onmouseleave={handleEventMouseout}>
+                                                <h3 class="slds-tile__title slds-truncate" >
+                                                    <a href={eve.url}  data-id ={eve.Id} onmouseenter={handleEventMouseover}>{eve.Subject}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-tile__detail">
+                                                <dl class="slds-wrap">
+                                                    <!--<dt class="slds-item_label slds-text-color_weak slds-truncate" title="Title">Money Chat # :&nbsp;&nbsp;{moneyChat.Name}</dt>-->
+                                                    <dd class="slds-item_detail slds-truncate" title="Created Date">Type :&nbsp;{eve.Type}</dd>
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Status">Assigned To :&nbsp;{eve.Owner.Name}</dt>
+                                                </dl>
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <a class="slds-card__footer-action" href="#" onclick={navigateToEventRelatedList}>View All
+                            <span class="slds-assistive-text">Events</span>
+                        </a>
+                    </footer>
+                </article>
+            </template>
+        </template>
+
+        <template if:true={showTasks}>
+            <template if:false={isTasksNull}>
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <template for:each={taskList} for:item="task">
+                                <li key={task.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-case" title={task.Subject}>
+                                                <lightning-icon icon-name='standard:task' alternative-text='Tasks' size='medium' title={task.Subject}></lightning-icon> 
+                                                <span class="slds-assistive-text">Task</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <!-- Tooltip-->
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={task.Id} onmouseleave={handleTaskMouseout}>
+                                                <h3 class="slds-tile__title slds-truncate" >
+                                                    <a href={task.url}  data-id ={task.Id} onmouseenter={handleTaskMouseover} >{task.Subject}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-tile__detail">
+                                                <dl class="slds-wrap">
+                                                    <!--<dt class="slds-item_label slds-text-color_weak slds-truncate" title="Title">Money Chat # :&nbsp;&nbsp;{moneyChat.Name}</dt>-->
+                                                    <dd class="slds-item_detail slds-truncate" title="AssignedTo">Assigned To :&nbsp;{task.Owner.Name}</dd>
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Due Date">Due Date :&nbsp;{task.ActivityDate}</dt>
+                                                </dl>
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <a class="slds-card__footer-action" href="#" onclick={navigateToTaskRelatedList}>View All
+                            <span class="slds-assistive-text">Tasks</span>
+                        </a>
+                    </footer>
+                </article>
+            </template>
+        </template>
+
+        <!-- Added for CRM-4474 Date: July 19th 2022 -->
+        <template if:true={showProdNotes}>
+            <template if:false={isProdNotesNull}>
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <ul class="slds-grid slds-wrap slds-grid_pull-padded">
+                            <template for:each={prodNotesList} for:item="prodNote">
+                                <li key={prodNote.Id} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-case" title={prodNote.Name}>
+                                                <lightning-icon icon-name='standard:document' alternative-text='Product Notes' size='medium' title={prodNote.Name}></lightning-icon> 
+                                                <span class="slds-assistive-text">Product Note</span>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <!-- Tooltip-->
+                                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate" data-id ={prodNote.Product_Review_and_Disclosure__c} onmouseleave={handleProdNoteMouseout}>
+                                                <h3 class="slds-tile__title slds-truncate" >
+                                                    <a href={prodNote.url}  data-id ={prodNote.Product_Review_and_Disclosure__c} onmouseenter={handleProdNoteMouseover} >{prodNote.Record_Name_for_Retrieval__c}</a>
+                                                </h3>
+                                            </div>
+                                            <div class="slds-tile__detail">
+                                                <dl class="slds-wrap">
+                                                    <!--<dt class="slds-item_label slds-text-color_weak slds-truncate" title="Title">Money Chat # :&nbsp;&nbsp;{moneyChat.Name}</dt>-->
+                                                    <dd class="slds-item_detail slds-truncate" title="Stage">Status :&nbsp;{prodNote.PRD_Status_Formula__c}</dd>
+                                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Status">Created Date :&nbsp;
+                                                        <lightning-formatted-date-time value={prodNote.CreatedDate}></lightning-formatted-date-time>
+                                                    </dt>
+                                                        
+                                                </dl>
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </article>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <a class="slds-card__footer-action" href="#" onclick={navigateToProductNotesRelatedList}>View All
+                            <span class="slds-assistive-text">Product Notes</span>
+                        </a>
+                    </footer>
+                </article>
+            </template>
+        </template>
+        
+    </lightning-card>
+</template>

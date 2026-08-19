@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Account_Visibility_to_Life</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>CRM-662 -- shares the Member Account when a Life referral has been made, and the PB updates the Account  &quot;Shared with Life&quot; field to TRUE</description>
+        <label>Account Visibility to Life</label>
+        <sharedTo>
+            <group>Life</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Shared_with_Life__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Person Account,nCino Prospect Account,Business</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ProspectsCreatedbyLifeUserVisibletoAllUsers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>All prospects are visible and editable by all users</description>
+        <label>ProspectsVisibletoAllUsers</label>
+        <sharedTo>
+            <group>All_CCS_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Business Prospect,Individual Prospect</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>nCinoProspectsVisibletoAllNonLifeUsers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>nCino Prospect profiles are visible to all users except Life.</description>
+        <label>nCinoProspectsVisibletoAllNonLifeUsers</label>
+        <sharedTo>
+            <group>Non_Life_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>nCino Prospect Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Account_Visibility_to_Non_Life_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>CRM-662 - sets the Account Visibility to Non-Life Users as Public R/W.  Updated for LTN-2183 (remove Portal)</description>
+        <label>Account Visibility to Non Life Users</label>
+        <sharedTo>
+            <group>Non_Life_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CCS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

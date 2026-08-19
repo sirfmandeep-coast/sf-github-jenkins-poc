@@ -1,0 +1,24 @@
+<apex:page showHeader="false" standardController="user" sidebar="false" standardStylesheets="false">
+ <!-- Lightning Resources-->
+    <apex:includeScript value="/lightning/lightning.out.js" /> 
+    <!-- JavaScript to make Remote Objects calls -->
+    <script>
+        var code;
+        var accessToken='accessToken';
+        var refreshToken = 'refreshToken';
+        var userId = "{!user.Id}";
+         
+        $Lightning.use("c:userCreationApp", function() {
+            $Lightning.createComponent("c:userCreation",
+                  { "code" : code, "accessToken": accessToken, "refreshToken": refreshToken, "userId": userId},
+                  "lightningComponent",
+                  function(cmp) {
+                    // any further setup goes here
+            });
+        });
+    </script>
+
+    <!-- Lightning Component -->
+    <div id="lightningComponent"/>
+
+</apex:page>

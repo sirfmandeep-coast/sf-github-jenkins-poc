@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classification_Change_Reason__c</fullName>
+    <description>CRM-5813 - If the Classification is changed, a reason is required.</description>
+    <label>Classification Change Reason</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Marital Status</fullName>
+                <default>false</default>
+                <label>Marital Status</label>
+            </value>
+            <value>
+                <fullName>Change in Assets</fullName>
+                <default>false</default>
+                <label>Change in Assets</label>
+            </value>
+            <value>
+                <fullName>Death</fullName>
+                <default>false</default>
+                <label>Death</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Change of Household - Death</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Change of Household - Death</label>
+            </value>
+            <value>
+                <fullName>Change of Household - Divorce</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Change of Household - Divorce</label>
+            </value>
+            <value>
+                <fullName>Change of Household - Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Change of Household - Other</label>
+            </value>
+            <value>
+                <fullName>Change of Household - Separation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Change of Household - Separation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

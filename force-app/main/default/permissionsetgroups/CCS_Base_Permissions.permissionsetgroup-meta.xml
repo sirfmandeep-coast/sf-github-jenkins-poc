@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Standard Perm Sets for All Users</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Base Permissions</label>
+    <permissionSets>CCS_Baseline_FLS</permissionSets>
+    <permissionSets>CCS_Enhanced_Lightning_Grid</permissionSets>
+    <permissionSets>CCS_Events</permissionSets>
+    <permissionSets>CCS_PreQual_FLS</permissionSets>
+    <permissionSets>CCS_Rate_Holds</permissionSets>
+    <permissionSets>FinServ__ApexAuraAccess</permissionSets>
+    <permissionSets>FinServ__FinancialServicesCloudStandard</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

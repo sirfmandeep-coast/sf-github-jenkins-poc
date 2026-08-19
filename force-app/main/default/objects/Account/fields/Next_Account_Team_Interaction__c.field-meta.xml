@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Account_Team_Interaction__c</fullName>
+    <description>Last updated: CRM-6247</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Classification__c, &quot;&quot;) 
+,&quot;&quot;
+,TEXT(
+   CASE(TEXT(Classification__c), &quot;AAA&quot;, 90, &quot;AA&quot;, 90, &quot;A&quot;, 180, &quot;AS&quot;, 360, &quot;AF&quot;, 360, &quot;B&quot;, 360, &quot;C&quot;, 720, 720)
+     - IF (ISBLANK(Last_Account_Team_Interaction__c), ROUND(NOW() -  DATETIMEVALUE(&quot;2024-11-20 00:00:00&quot;), 0), ROUND(NOW() -  Last_Account_Team_Interaction__c, 0)))
+
++ &quot; Days&quot;)</formula>
+    <label>Next Account Team Interaction</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

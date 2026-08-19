@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consent_to_General_Email_Communication__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Consent to general email communication is not required if the member has provided their consent to electronic delivery of documents</inlineHelpText>
+    <label>Consent to General Email Communication</label>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

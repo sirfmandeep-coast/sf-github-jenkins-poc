@@ -1,0 +1,302 @@
+<template>
+    <lightning-card>
+        <div slot="actions">
+            Advisor:     
+            <c-user-look-up style="display: inline-flex;" is-value-selected="true" selected-name={userFullName} obj-name="User" search-placeholder="Search Advisor" icon-name="standard:user" onlookupselected={handleUserSelection} onlookupremoved={handleUserSelection}></c-user-look-up>         
+        </div>
+        <div class="slds-tabs_card slds-tabs_default">
+            <div class="slds-grid slds-gutters">
+                
+                <lightning-combobox
+                        label="Classification" 
+                        options={classes}
+                        class="slds-p-vertical_x-small slds-p-horizontal_medium"
+                        onchange={handleChangeClass}
+                        value={classSelection}
+                ></lightning-combobox>
+        
+                <lightning-combobox
+                    label="Interaction Status" 
+                    options={interactionStatus}
+                    class="slds-p-vertical_x-small slds-p-horizontal_medium"
+                    onchange={handleChangeInteractionStatus}
+                    value={interactionStatusSelection}
+                ></lightning-combobox>
+
+
+                <lightning-combobox
+                    label="Review Status" 
+                    options={reviewStatus}
+                    class="slds-p-vertical_x-small slds-p-horizontal_medium"
+                    onchange={handleChangeReviewStatus}
+                    value={reviewStatusSelection}
+                ></lightning-combobox>
+                <!--
+                <lightning-combobox
+                    label="Households" 
+                    options={households}
+                    class="slds-p-vertical_x-small slds-p-horizontal_medium"
+                    onchange={handleChangeHousehold}
+                    value={householdFlagSelection}
+                ></lightning-combobox>
+                -->
+                <!--
+                <lightning-button variant="neutral" label="Search" onclick={searchAccounts} class="slds-p-top_x-large slds-p-horizontal_medium"></lightning-button>
+                
+                <lightning-button variant="neutral" label="Update Classification" onclick={handleUpdateClass} class="slds-p-top_x-large slds-p-horizontal_medium"></lightning-button> 
+                -->
+            </div>
+            <template if:true={accountData.length}>
+                <div>
+                    <lightning-datatable
+                        data-id="datatable"
+                        key-field="id"
+                        data={recordsToDisplay}
+                        columns={columns}
+                        sorted-by={sortBy}
+                        sorted-direction={sortDirection}
+                        default-sort-direction={defaultSortDirection}
+                        onsort={handleSorting}
+                        onrowselection={handleRowSelection}
+                        selected-rows={selectedRows}
+                        errors={dataErrors}
+                        onrowaction={handleRowAction}
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+                <!--
+                <div>
+                    <BR/>
+                    <BR/>
+                    Second Datatable
+                </div>
+                <div>
+                    <lightning-datatable
+                        key-field="id"
+                        data={recordsToDisplay}
+                        columns={columns}
+                        onrowselection={handleRowSelection}
+                        selected-rows={selectedRows}
+                        errors={dataErrors}
+                        onrowaction={handleRowAction}
+                        show-row-number-column="true">
+                    </lightning-datatable>
+                </div>
+                -->
+               
+                <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-spread" style="padding-top: 0.5em;">
+                    <!--RECORDS PER PAGE-->
+                    <div class="slds-col">
+                        <div class="slds-list_inline slds-p-bottom_xx-small">
+                            <label class="slds-text-color_weak slds-p-horizontal_x-small" for="recordsPerPage">Page Size:</label>
+                            <div class="slds-select_container">
+                                <select class="slds-select" id="recordsPerPage" name="pageSize" onchange={handleRecordsPerPage} >
+                                    <template for:each={pageSizeOptions} for:item="option">
+                                        <option key={option} value={option}>{option}</option>
+                                    </template>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PAGE NAVIGATION-->
+                    <div class="slds-align_absolute-center" style="height:5rem">
+                        <lightning-button disabled={bDisableFirst} icon-name="utility:jump_to_left" label="First" class="slds-p-horizontal_x-small" alternative-text="first page" onclick={firstPage}></lightning-button>
+                        <lightning-button disabled={bDisableFirst} icon-name="utility:chevronleft" label="Previous" alternative-text="Previous" onclick={previousPage}></lightning-button>
+                        &nbsp;
+                        <span class="slds-badge">Showing {pageNumber} &nbsp;of&nbsp; {totalPages} &nbsp;&nbsp;Page(s)</span>
+                        &nbsp;
+                        <lightning-button disabled={bDisableLast} icon-name="utility:chevronright" label="Next" alternative-text="Next" onclick={nextPage} class="slds-p-horizontal_x-small" icon-position="right"></lightning-button>
+                        <lightning-button disabled={bDisableLast} icon-name="utility:jump_to_right" label="Last" alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button>
+                    </div>
+                    <!--TOTAL RECORDS-->
+                    <div class="slds-clearfix">
+                        <div class="slds-float_right">
+                            <span class="slds-badge"> Total Records: {totalRecords}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </template>
+
+            <!-- LogInteractionModal -->
+            <template if:true={showLogInteractionModal}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <lightning-button-icon
+                                class="slds-modal__close"
+                                onclick={handleLogInteractionCancel}
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                                title="Close"
+                            ></lightning-button-icon>
+                            <h2  id="modal-heading-log-interaction" class="slds-modal__title slds-hyphenate">Log an Interaction</h2>
+                        </header>
+                        <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-interaction-flow">
+                            <lightning-flow flow-api-name='Screen_Flow_Create_Interaction'
+                                flow-input-variables={interactionFlowInputVariables} onstatuschange={handleInteractionFlowStatusChange}>
+                            </lightning-flow>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <!-- UpdateClassModal -->
+            <template if:true={showUpdateClassModal}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <lightning-button-icon
+                                class="slds-modal__close"
+                                onclick={handleUpdateClassCancel}
+                                icon-name="utility:close"
+                                alternative-text="Close"
+                                title="Close"
+                            ></lightning-button-icon>
+                            <h2  id="modal-heading-update-class" class="slds-modal__title slds-hyphenate">Update Classification</h2>
+                        </header>
+                        <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-update-class">
+                            <lightning-layout>
+                                    <lightning-layout-item
+                                        padding="around-small"
+                                        size="12"
+                                        small-device-size="12"
+                                        medium-device-size="12"
+                                        large-device-size="12">
+                                        <div class="slds-m-left_medium">{selectedRows.length} recods to be updated.<br/></div>
+                                        <lightning-combobox
+                                            label="Class" 
+                                            required
+                                            options={eligibleClasses}
+                                            class="slds-p-vertical_x-small slds-p-horizontal_medium"
+                                            value={classSelectionForMassUpdate}
+                                            onchange={handleChangeClassModal}
+                                        ></lightning-combobox>
+                                    </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning-button
+                                label="Cancel"
+                                title="Cancel"
+                                onclick={handleUpdateClassCancel}
+                                class="slds-var-m-left_x-small">
+                            </lightning-button>
+                            <lightning-button
+                                variant="brand"
+                                label="Save"
+                                title="Save"
+                                onclick={handleUpdateClassSave}
+                                class="slds-var-m-left_x-small">
+                            </lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+        </div>
+        
+        <lightning-spinner alternative-text="Mass updating Classification" variant="brand" size="large" if:true={showSpinner}> </lightning-spinner>
+
+        <!--Appointment Flow-->
+        <template if:true={showAppointmentFlowModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning-button-icon
+                            class="slds-modal__close"
+                            onclick={handleAppointmentFlowCancel}
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            title="Close"
+                        ></lightning-button-icon>
+                        <h2  id="modal-heading-appointment-flow" class="slds-modal__title slds-hyphenate">Book an Appointment</h2>
+                    </header>
+                    <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-appointment-flow">
+                        <lightning-flow flow-api-name='CCS_Appointment_Scheduler_v3'
+                            flow-input-variables={appointmentFlowInputVariables} onstatuschange={handleAppointmentFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!--Opportunity Flow-->
+        <template if:true={showOpportunityFlowModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning-button-icon
+                            class="slds-modal__close"
+                            onclick={handleOpportunityFlowCancel}
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            title="Close"
+                        ></lightning-button-icon>
+                        <h2  id="modal-heading-opportunity-flow" class="slds-modal__title slds-hyphenate">Create an Opportunity</h2>
+                    </header>
+                    <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-opportunity-flow">
+                        <lightning-flow flow-api-name='Screen_Flow_Create_Opportunity'
+                            flow-input-variables={opportunityFlowInputVariables} onstatuschange={handleOpportunityFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!--Referral Flow-->
+        <template if:true={showReferralFlowModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning-button-icon
+                            class="slds-modal__close"
+                            onclick={handleReferralFlowCancel}
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            title="Close"
+                        ></lightning-button-icon>
+                        <h2  id="modal-heading-referral-flow" class="slds-modal__title slds-hyphenate">Create a Referral</h2>
+                    </header>
+                    <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-referral-flow">
+                        <lightning-flow flow-api-name='Screen_Flow_Create_Referral'
+                            flow-input-variables={referralFlowInputVariables} onstatuschange={handleReferralFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!--Account Class Classification Flow-->
+        <template if:true={showChangeAccountClassificationFlowModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning-button-icon
+                            class="slds-modal__close"
+                            onclick={handleChangeAccountClassificationFlowCancel}
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            title="Close"
+                        ></lightning-button-icon>
+                        <h2  id="modal-heading-change-account-classification-flow" class="slds-modal__title slds-hyphenate">Change Classification</h2>
+                    </header>
+                    <div class="slds-modal__content slds-var-p-around_medium my-modal-inputs" id="modal-content-id-change-account-classification-flow">
+                        <lightning-flow flow-api-name='PM_Account_Classification_Change'
+                            flow-input-variables={changeAccountClassificationFlowInputVariables} onstatuschange={handleChangeAccountClassificationFlowStatusChange}>
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </lightning-card>
+
+
+
+</template>

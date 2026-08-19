@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ownership__c</fullName>
+    <description>CRM-6418 - Used in FORM</description>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>Summarizes owner’s role, background, leadership style, business goals, key milestones, family involvement, and any unique factors (e.g. succession, health) that influence business operations and long-term stability.</inlineHelpText>
+    <label>Ownership</label>
+    <length>3000</length>
+    <securityClassification>Restricted</securityClassification>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

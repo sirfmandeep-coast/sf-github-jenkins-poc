@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Org_Type__c</fullName>
+    <description>List of Business/Org Types. Dependent on Business/Org Structure picklist. Values supplied by T-24 Integration. CRM-349</description>
+    <label>Business/Org Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Org_Structure__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Business_Org_Type</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Lawyer&apos;s General Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Notary Public&apos;s General Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Realtor/Property Mngr General Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Other General Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Notary Publics Named Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Realtor/Property Mngr&apos;s Named Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Other Named Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trusts</controllingFieldValue>
+            <valueName>Lawyer&apos;s Named Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agency</controllingFieldValue>
+            <valueName>Client Named (Agency)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Owner</controllingFieldValue>
+            <valueName>SDB Agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Owner</controllingFieldValue>
+            <valueName>Senior</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Owner</controllingFieldValue>
+            <valueName>CDIC Contact Person</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Institutional</controllingFieldValue>
+            <valueName>Institutional</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Sole Proprietorship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Election</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Constituency Office</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partnerships</controllingFieldValue>
+            <valueName>General Partnership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partnerships</controllingFieldValue>
+            <valueName>Corporate Partnership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partnerships</controllingFieldValue>
+            <valueName>Limited Partnership (LP)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporations</controllingFieldValue>
+            <valueName>Limited Corporation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporations</controllingFieldValue>
+            <valueName>Incorporated Association or Society</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporations</controllingFieldValue>
+            <valueName>Co-operative Association</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporations</controllingFieldValue>
+            <valueName>Strata Corporation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporations</controllingFieldValue>
+            <valueName>Crown Corporation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporations</controllingFieldValue>
+            <valueName>Unlimited Liability (ULC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Joint Ventures</controllingFieldValue>
+            <valueName>Joint Venture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Documented or Victim Trust</controllingFieldValue>
+            <valueName>Documented trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Documented or Victim Trust</controllingFieldValue>
+            <valueName>Victim&apos;s Trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Institutions</controllingFieldValue>
+            <valueName>Banks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Institutions</controllingFieldValue>
+            <valueName>Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Institutions</controllingFieldValue>
+            <valueName>Regular with Shares</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unincorporated Organization</controllingFieldValue>
+            <valueName>Unincorporated Organization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government/Public Body</controllingFieldValue>
+            <valueName>Federal/Provincial Government</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government/Public Body</controllingFieldValue>
+            <valueName>Municipal/School/Hosp/Public Utility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Broker</controllingFieldValue>
+            <valueName>Deposit Broker (Agency)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

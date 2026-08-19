@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_Index_NOT_1_to_100</fullName>
+    <active>false</active>
+    <description>Value Index can only be 1-100.</description>
+    <errorConditionFormula>AND
+(
+  NOT(ISBLANK(Value_Index__c)),
+  OR
+  (
+    Value_Index__c &lt; 1,
+    Value_Index__c &gt; 100
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Value_Index__c</errorDisplayField>
+    <errorMessage>Value Index can only be 1-100. Please correct your data.</errorMessage>
+</ValidationRule>

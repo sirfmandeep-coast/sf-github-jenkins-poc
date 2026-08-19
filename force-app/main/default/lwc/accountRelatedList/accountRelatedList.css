@@ -1,0 +1,26 @@
+.dynamicCSS{
+    border:3px solid salmon;
+}
+
+.addBlueBorder{
+    border-bottom: 5px solid blue;
+}
+
+.circle{
+    background-color:#fff;
+    color:BLUE;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border:3px solid rgb(52, 52, 218);
+    transition: .4s ease;
+    margin-left: -12px;
+}
+
+.circleContainer{
+    display: inline-flex;
+    vertical-align: top;
+}

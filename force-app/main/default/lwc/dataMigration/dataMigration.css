@@ -1,0 +1,33 @@
+.orgcheck-loading-text {
+    opacity: 0;
+    animation: orgcheck-intro 3s ease-out 0.5s forwards;
+    color: rgb(75, 213, 238);
+    font-weight: 400;
+    font-size: 100%;
+}
+@keyframes orgcheck-intro {
+    0%   { opacity: 0.25; }
+    100% { opacity: 1; }
+}        
+.orgcheck-jokes-board {
+    opacity: 0;
+    animation: orgcheck-jokes-board 1s ease-out 3.5s forwards;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #9daf8b;
+    background-color: black;
+    width: 67%;
+    padding: 10px 20px 10px 20px;
+    margin: 5em auto auto;
+}
+@keyframes orgcheck-jokes-board {
+    0%   { opacity: 0; }
+    10%   { opacity: 0.25; }
+    50%   { opacity: 0.50; }
+    100% { opacity: 1; }
+} 
+.orgcheck-jokes-content {
+    font-size: small ; 
+    font-family: monospace;
+    text-align: left;
+    color: #30ff15;
+}

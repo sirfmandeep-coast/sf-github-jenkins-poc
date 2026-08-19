@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>Only one Lending Highway request may be submitted per application number. If you are resubmitting your Lending Highway request, please go back to the original record to resubmit; do not create a new request for resubmissions.</alertText>
+    <description>Blocks users from creating Lending Highway requests when the LOS Application Number or the Broker Number matches an existing record on create. Allows, with alerts, when editing the record.</description>
+    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Lending_Highway__c</matchRuleSObjectType>
+        <matchingRule>Block_Duplicate_Lending_Highway_Requests_On_Create</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>Block Duplicate Lending Highway Requests On Create</masterLabel>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>1</sortOrder>
+</DuplicateRule>

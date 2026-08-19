@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EquityRisk</fullName>
+    <active>true</active>
+    <description>Equity_at_Risk__c range is 0-100%
+CRM-4979</description>
+    <errorConditionFormula>OR
+(
+ Equity_at_Risk__c &gt; 1.0,
+ Equity_at_Risk__c &lt; 0.0
+)</errorConditionFormula>
+    <errorDisplayField>Equity_at_Risk__c</errorDisplayField>
+    <errorMessage>Equity at Risk range is 0-100%</errorMessage>
+</ValidationRule>

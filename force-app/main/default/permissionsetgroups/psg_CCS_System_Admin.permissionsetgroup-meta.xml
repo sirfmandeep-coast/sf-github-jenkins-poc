@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Perm Set Group for nearly System Admins</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS System Administrator PermsetGroup</label>
+    <permissionSets>CCS_Chatter_Visibility</permissionSets>
+    <permissionSets>CCS_Knowledge_LSF_Permission_Set</permissionSets>
+    <permissionSets>CCS_Lending_Highway_Manage_Overflow</permissionSets>
+    <permissionSets>CCS_Modify_All_Data</permissionSets>
+    <permissionSets>CCS_Product_Review_and_Disclosure_CRE</permissionSets>
+    <permissionSets>CCS_Product_Review_and_Disclosure_D</permissionSets>
+    <permissionSets>CCS_Product_Review_and_Disclosure_R</permissionSets>
+    <permissionSets>CCS_Read_All_Data</permissionSets>
+    <permissionSets>CCS_Review</permissionSets>
+    <permissionSets>CCS_Small_Business_Onboarding</permissionSets>
+    <permissionSets>CCS_Transfer_Records</permissionSets>
+    <permissionSets>FinServ__ApexAuraAccess</permissionSets>
+    <permissionSets>force__PipelineInspectionUser</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

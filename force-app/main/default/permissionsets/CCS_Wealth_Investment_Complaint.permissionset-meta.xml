@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>CCS_Wealth_Investment_Complaint</name>
+    </customPermissions>
+    <description>User can edit the Status field in the Wealth Investment Compliance and Life Investment Compliance complaint cases. Separate from the FCAC cases and therefore do not have the same restrictions on editing the Status field</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Wealth Investment Complaint</label>
+</PermissionSet>

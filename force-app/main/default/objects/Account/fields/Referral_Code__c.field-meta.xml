@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Code__c</fullName>
+    <description>Referral Code is a unique alphanumeric code for each member account used specifically for Referral Bonus , campaigns etc.,
+Referral Codes are coming from SFMC to CRM. 
+Referral Code wont change</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Referral Code</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

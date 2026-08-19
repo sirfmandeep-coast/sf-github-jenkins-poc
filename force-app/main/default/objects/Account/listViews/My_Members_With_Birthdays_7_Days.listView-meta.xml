@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Members_With_Birthdays_7_Days</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_ADDRESS2_CITY</columns>
+    <columns>PC_ADDRESS2_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>Date_of_Birth__pc</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>Birthday_in_Next_7_Days__pc</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>My Members With Birthdays (+- 7 Days)</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>CCS</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

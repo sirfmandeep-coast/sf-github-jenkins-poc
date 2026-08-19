@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>shared_with_life</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Shared_with_Life__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Shared_with_Life__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>* shared with life</label>
+    <sharedTo>
+        <group>CCS_System_Admins</group>
+    </sharedTo>
+</ListView>

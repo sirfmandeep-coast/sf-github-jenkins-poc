@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>CCS_Small_Business_Onboarding</name>
+    </customPermissions>
+    <description>Enables access to the Small Business Onboarding quick action (and screen flow) from account pages. CRM-6358.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Small Business Onboarding</label>
+</PermissionSet>

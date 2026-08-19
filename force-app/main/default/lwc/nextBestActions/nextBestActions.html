@@ -1,0 +1,42 @@
+<template>
+    <template if:true={nextBestActions.length}>
+        <lightning-card class="my-card">
+            <div slot="title"> 
+                         
+                <lightning-icon icon-name="standard:einstein_replies" size="small"></lightning-icon>
+                &nbsp;&nbsp;Next Best Experience
+            </div>
+            <template for:each={nextBestActions} for:item="record">
+                <lightning-card key={record.Id} class="my-card-child">
+                    <div slot="title">
+                        
+                            <lightning-button-icon data-id={record.Id} icon-name={record.showDetailsIcon}  alternative-text="View Details" title="View Details" onclick={clickViewDetails}></lightning-button-icon>
+                            &nbsp;&nbsp;{record.NBX_Template__r.Display_Name__c}
+                
+                    </div>
+                    <div slot="actions">
+                        <lightning-button-icon style="padding:2px;" data-id={record.Id} icon-name="utility:check"  alternative-text="Interested" onclick={clickAccept} size="medium"></lightning-button-icon>
+                        <lightning-button-icon style="padding:2px;" data-id={record.Id} icon-name="utility:close"  alternative-text="Not Interested" onclick={clickReject} size="medium"></lightning-button-icon>
+                        <lightning-button-icon style="padding:2px;" data-id={record.Id} icon-name="utility:clock"  alternative-text="Remind Me Later" onclick={clickWait} size="medium"></lightning-button-icon>  
+                    </div>
+
+                    <template if:true={record.showDetails}>
+                        <template if:true={record.Contextual_Detail__c}>
+                            <p class="slds-p-horizontal_large">
+                                <b>Details:</b> {record.Contextual_Detail__c}
+                                <br/>
+                                <br/>
+                            </p>
+                        </template>
+                        <p class="slds-p-horizontal_large">
+                            <lightning-formatted-rich-text value={record.NBX_Template__r.Inbound_Script__c}></lightning-formatted-rich-text>
+                        </p>
+                    </template>
+
+                </lightning-card>
+            </template>
+
+        </lightning-card>
+
+    </template>
+</template>

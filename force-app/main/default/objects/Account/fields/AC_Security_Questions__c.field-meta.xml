@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AC_Security_Questions__c</fullName>
+    <description>List Updated in May again</description>
+    <label>AC Security Questions</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3 Security Questions</fullName>
+                <default>false</default>
+                <label>3 Security Questions</label>
+            </value>
+            <value>
+                <fullName>2 Additional Security Questions</fullName>
+                <default>false</default>
+                <label>2 Additional Security Questions</label>
+            </value>
+            <value>
+                <fullName>3 Security Questions + 2 Enhanced</fullName>
+                <default>false</default>
+                <label>3 Security Questions + 2 Enhanced</label>
+            </value>
+            <value>
+                <fullName>Authentication not required</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Authentication not required</label>
+            </value>
+            <value>
+                <fullName>OnFido Digital ID Verification</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OnFido Digital ID Verification</label>
+            </value>
+            <value>
+                <fullName>Other - See CRM interactions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other - See CRM interactions</label>
+            </value>
+            <value>
+                <fullName>PAC authenticate + 2 Security Questions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PAC authenticate + 2 Security Questions</label>
+            </value>
+            <value>
+                <fullName>PAC authenticated</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PAC authenticated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

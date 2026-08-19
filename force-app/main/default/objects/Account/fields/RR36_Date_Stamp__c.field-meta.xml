@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RR36_Date_Stamp__c</fullName>
+    <description>CRM-4266 - Stamped by CCS_Behavioural_Review_RR_Date_Stamp Flow</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>RR36 Date Stamp</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users who are Life licensed and mutual fund licensed. Permission set restricted to creating Opportunities for Protection and Wealth record types. Normally only a Life user would be able to create Opportunities for Protection record type.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Dual License</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Opportunity</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <recordTypeVisibilities>
+        <recordType>Opportunity.Protection</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Opportunity.Wealth</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

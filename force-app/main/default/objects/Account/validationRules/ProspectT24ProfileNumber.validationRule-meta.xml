@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProspectT24ProfileNumber</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(REGEX( T24_Profile_Number__c ,&quot;^[0-9]*$&quot;))</errorConditionFormula>
+    <errorDisplayField>T24_Profile_Number__c</errorDisplayField>
+    <errorMessage>Please enter a valid T24 Profile value (number only)</errorMessage>
+</ValidationRule>

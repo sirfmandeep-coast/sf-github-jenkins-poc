@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Lending_Highway_Manage_Overflow</name>
+    </customPermissions>
+    <description>Only users with this permission set may set the &quot;Overflow&quot; field on the Lending Highway object to True.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Lending Highway Manage Overflow</label>
+</PermissionSet>

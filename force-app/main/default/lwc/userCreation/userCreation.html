@@ -1,0 +1,66 @@
+<template>
+    <template if:true={returnMessage}>
+        <lightning-card>
+            <div style="padding:0.5rem;background:#3c4149">
+                <div class="slds-align_absolute-center slds-text-heading_small slds-text-color_inverse">
+                    {returnMessage}
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:false={code}>
+        <template if:false={refreshToken}>
+            <lightning-card>
+                <lightning-layout horizontal-align="center" vertical-align="end">
+                    <div class="slds-var-m-top_large slds-var-p-right_medium">
+                        <lightning-layout-item size="4">
+                            <lightning-combobox name="target" value={selectedValue} placeholder="Select Target Org" options={targetOrgOptions} onchange={handleTargetOrgChange} required> </lightning-combobox>
+                        </lightning-layout-item>
+                    </div>
+                   
+                    <lightning-layout-item size="4">
+                        <lightning-button label="login into Other Org" title="login into Other Org" onclick={redirect}>
+                        </lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+           
+        </template>
+    </template>
+
+    <template if:true={refreshToken}>
+        <lightning-card>
+            <lightning-layout horizontal-align="center" vertical-align="end">
+                <div class="slds-var-m-top_large slds-var-p-right_medium">
+                    <lightning-layout-item size="4">
+                        <lightning-combobox name="target" value={selectedValue} label = "Target Org" placeholder="Select Target Org" options={targetOrgOptions} onchange={handleTargetOrgChange} required></lightning-combobox>
+                    </lightning-layout-item>
+                </div>
+               
+                <lightning-layout-item size="4">
+                    <lightning-button label="Sync User" title="Sync User" onclick={syncUser}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+       
+    </template>
+
+    <template if:true={code}>
+        <lightning-card>
+            <lightning-layout horizontal-align="center" vertical-align="end">
+                <div class="slds-var-m-top_large slds-var-p-right_medium">
+                    <lightning-layout-item size="4">
+                        <lightning-combobox name="target"  value={selectedValue} placeholder="Select Target Org" options={targetOrgOptions} onchange={handleTargetOrgChange} required></lightning-combobox>
+                    </lightning-layout-item>
+                </div>
+               
+                <lightning-layout-item size="4">
+                    <lightning-button label="Sync User" title="Sync User" onclick={syncUser}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </template>
+    
+</template>

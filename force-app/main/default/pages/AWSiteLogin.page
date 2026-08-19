@@ -1,0 +1,1029 @@
+<apex:page id="loginPage" docType="html-5.0" showHeader="false" title="{!$Label.site.site_login}" controller="AWSiteController">
+      <style type="text/css">
+        .frame-5,
+        .frame-5 * {
+          box-sizing: border-box;
+        }
+        .frame-5 {
+          background: var(--colours-neutrals-white, #ffffff);
+          padding: 40px 100px 40px 100px;
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          align-items: center;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 600px;
+          position: relative;
+          box-shadow: var(
+            --container-shadow-box-shadow,
+            0px 2px 2px 0px rgba(0, 0, 0, 0.1),
+            0px 0px 2px 0px rgba(0, 0, 0, 0.12)
+          );
+        }
+        .group-104 {
+          height: auto;
+          position: absolute;
+          right: 48px;
+          bottom: 51px;
+          overflow: visible;
+        }
+        .form-fields {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .web-forms-inputs-input-text-one-item-master {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: center;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .label-optional-label-icon-validation {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: flex-end;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 307px;
+          position: relative;
+        }
+        .label-optional-icon {
+          display: flex;
+          flex-direction: row;
+          gap: 7px;
+          align-items: center;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .label {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 308px;
+          position: relative;
+        }
+        .label2 {
+          color: #000000;
+          text-align: left;
+          font: var(
+            --app-form-fields-h-6-black,
+            700 16px/24px "Coast Sans",
+            sans-serif
+          );
+          position: relative;
+          width: 308px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .field-placeholder-text-trail-icon-placeholder {
+          background: var(--colours-neutrals-white, #ffffff);
+          border-radius: 5px;
+          border-style: solid;
+          border-color: var(--colours-neutrals-gray, #626262);
+          border-width: 1px;
+          padding: 0px 16px 0px 16px;
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+          justify-content: flex-start;
+          align-self: stretch;
+          flex-shrink: 0;
+          height: 45px;
+          position: relative;
+        }
+        .text {
+          padding: 10px 0px 10px 0px;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          height: 45px;
+          position: relative;
+        }
+        .placeholder-text {
+          color: var(--colours-neutrals-gray, #626262);
+          text-align: left;
+          font: var(--web-paragraph, 400 16px/24px "Coast Sans", sans-serif);
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .web-buttons {
+          border-radius: 37px;
+          border-style: solid;
+          border-color: transparent;
+          border-width: 4px;
+          display: flex;
+          flex-direction: column;
+          gap: 0px;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          width: 326px;
+          position: relative;
+        }
+        .web-button-large {
+          background: var(--colours-brand-colours-ocean-blue, #0056ff);
+          border-radius: 37px;
+          padding: 8px 16px 8px 16px;
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+          justify-content: center;
+          align-self: stretch;
+          flex-shrink: 0;
+          height: 56px;
+          position: relative;
+        }
+        .outline-interactive-white-padlock {
+          flex-shrink: 0;
+          width: 30px;
+          height: 30px;
+          position: relative;
+        }
+        .outline-interactive-white-padlock2 {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .outline-interactive-white-forward {
+          background: transparent;
+          padding: 7px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .outline-interactive-white-forward2 {
+          flex-shrink: 0;
+          position: relative;
+          overflow: visible;
+        }
+        .rectangle-7 {
+          background: #d9d9d9;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .base-icons-lock-padlock {
+          position: absolute;
+          left: 7px;
+          top: 4px;
+          overflow: visible;
+        }
+        .label3 {
+          color: var(--colours-neutrals-foam-white, #fafafa);
+          text-align: left;
+          font: var(
+            --web-heading-4-label-cta-h-4-whiteon-ocean-blue,
+            700 16px/20px "Coast Sans",
+            sans-serif
+          );
+          position: relative;
+        }
+        .forgot-your-username-forgot-your-password {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          text-align: left;
+          font: var(--undefined, 400 14px/21px "Coast Sans", sans-serif);
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .forgot-your-username-forgot-your-password-span {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+        }
+        .forgot-your-username-forgot-your-password-span2 {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: var(--web-paragraph-small, 400 14px/21px "Coast Sans", sans-serif);
+        }
+        .forgot-your-username-forgot-your-password-span3 {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+        }
+
+        .all-contents,
+        .all-contents * {
+          box-sizing: border-box;
+        }
+        .all-contents {
+          display: flex;
+          flex-direction: column;
+          gap: 100px;
+          align-items: center;
+          justify-content: flex-start;
+          position: relative;
+        }
+        .web-navigation-header-top-logout {
+          display: flex;
+          flex-direction: column;
+          gap: 0px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 1592px;
+          height: 80px;
+          position: relative;
+        }
+        .blue-container {
+          background: var(--colours-brand-colours-ocean-blue, #0056ff);
+          padding: 18px 76px 19px 94px;
+          display: flex;
+          flex-direction: row;
+          gap: 949px;
+          align-items: center;
+          justify-content: flex-start;
+          align-self: stretch;
+          flex-shrink: 0;
+          height: 75px;
+          position: relative;
+        }
+        .logo {
+          flex-shrink: 0;
+          width: 175px;
+          height: 31px;
+          position: relative;
+        }
+        .brand-logo-foam-white {
+          width: 175px;
+          height: 31px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .coast-capital-logotype-rgb-foam-white {
+          position: absolute;
+          inset: 0;
+        }
+        .logo2 {
+          width: 175px;
+          height: 31px;
+          position: static;
+        }
+        .group {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          overflow: visible;
+        }
+        .button-frame {
+          flex-shrink: 0;
+          width: 146px;
+          height: 30px;
+          position: relative;
+        }
+        .frame-9 {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .frame-8 {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 592px;
+          position: relative;
+        }
+        .log-in-to-deposit-agent-portal {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          text-align: left;
+          font: var(
+            --web-heading-1-h-1-ocean-blue,
+            700 40px/50px "Coast Sans",
+            sans-serif
+          );
+          position: relative;
+          width: 592px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .frame-5 {
+          background: var(--colours-neutrals-white, #ffffff);
+          padding: 24px 100px 24px 100px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          align-items: center;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 600px;
+          position: relative;
+          box-shadow: var(
+            --container-shadow-box-shadow,
+            0px 2px 2px 0px rgba(0, 0, 0, 0.1),
+            0px 0px 2px 0px rgba(0, 0, 0, 0.12)
+          );
+        }
+        .form-fields {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .web-forms-inputs-input-text-one-item-master {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: center;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .label-optional-label-icon-validation {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: flex-end;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 307px;
+          position: relative;
+        }
+        .label-optional-icon {
+          display: flex;
+          flex-direction: row;
+          gap: 7px;
+          align-items: center;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .label {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          width: 308px;
+          position: relative;
+        }
+        .label2 {
+          color: #000000;
+          text-align: left;
+          font: var(
+            --app-form-fields-h-6-black,
+            700 16px/24px "Coast Sans",
+            sans-serif
+          );
+          position: relative;
+          width: 308px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .field-placeholder-text-trail-icon-placeholder {
+          background: var(--colours-neutrals-white, #ffffff);
+          border-radius: 5px;
+          border-style: solid;
+          border-color: var(--colours-neutrals-gray, #626262);
+          border-width: 1px;
+          padding: 0px 16px 0px 16px;
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+          justify-content: flex-start;
+          align-self: stretch;
+          flex-shrink: 0;
+          height: 45px;
+          position: relative;
+        }
+        .text {
+          padding: 10px 0px 10px 0px;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          height: 45px;
+          position: relative;
+        }
+        .placeholder-text {
+          color: var(--colours-neutrals-gray, #626262);
+          text-align: left;
+          font: var(--web-paragraph, 400 16px/24px "Coast Sans", sans-serif);
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .web-buttons {
+          border-radius: 37px;
+          border-style: solid;
+          border-color: transparent;
+          border-width: 4px;
+          display: flex;
+          flex-direction: column;
+          gap: 0px;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          width: 326px;
+          position: relative;
+        }
+        .web-button-large {
+          background: var(--colours-brand-colours-ocean-blue, #0056ff);
+          border-radius: 37px;
+          padding: 8px 16px 8px 16px;
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+          justify-content: center;
+          align-self: stretch;
+          flex-shrink: 0;
+          height: 56px;
+          position: relative;
+        }
+        .outline-interactive-white-padlock {
+          flex-shrink: 0;
+          width: 30px;
+          height: 30px;
+          position: relative;
+        }
+        .outline-interactive-white-padlock2 {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .rectangle-7 {
+          background: #d9d9d9;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .base-icons-lock-padlock {
+          position: absolute;
+          left: 7px;
+          top: 4px;
+          overflow: visible;
+        }
+        .label3 {
+          color: var(--colours-neutrals-foam-white, #fafafa);
+          text-align: left;
+          font: var(
+            --web-heading-4-label-cta-h-4-whiteon-ocean-blue,
+            700 16px/20px "Coast Sans",
+            sans-serif
+          );
+          position: relative;
+        }
+        .frame-10 {
+          display: flex;
+          flex-direction: row;
+          gap: 14px;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .outline-interactive-blue-checkbox {
+          flex-shrink: 0;
+          width: 24px;
+          height: 24px;
+          position: relative;
+        }
+        .outline-interactive-gray-other-check-off {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          overflow: visible;
+        }
+        .i-have-read-and-agree-to-the-terms-and-conditions {
+          text-align: left;
+          font: var(--undefined, 400 14px/21px "Coast Sans", sans-serif);
+          position: relative;
+          width: 270px;
+          height: 43px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .i-have-read-and-agree-to-the-terms-and-conditions-span {
+          color: var(--colours-neutrals-black, #000000);
+          font: var(--web-paragraph-small, 400 14px/21px "Coast Sans", sans-serif);
+        }
+        .i-have-read-and-agree-to-the-terms-and-conditions-span2 {
+          color: #ffffff;
+          font: var(--web-paragraph-small, 400 14px/21px "Coast Sans", sans-serif);
+        }
+        .i-have-read-and-agree-to-the-terms-and-conditions-span3 {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+        }
+        .i-have-read-and-agree-to-the-terms-and-conditions-span4 {
+          color: #ffffff;
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+        }
+        .forgot-your-username-forgot-your-password {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          text-align: left;
+          font: var(--undefined, 400 14px/21px "Coast Sans", sans-serif);
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        .forgot-your-username-forgot-your-password-span {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+        }
+        .forgot-your-username-forgot-your-password-span2 {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: var(--web-paragraph-small, 400 14px/21px "Coast Sans", sans-serif);
+        }
+        .forgot-your-username-forgot-your-password-span3 {
+          color: var(--colours-brand-colours-ocean-blue, #0056ff);
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+        }
+        .web-footer-simple,
+        .web-footer-simple * {
+          box-sizing: border-box;
+        }
+        .web-footer-simple {
+          width: 100%;
+          height: 51px;
+          position: relative;
+        }
+        .rectangle {
+          background: var(--colours-neutrals-light-gray, #f4f4f4);
+          width: 100%;
+          height: 51px;
+          position: absolute;
+          left: 0px;
+          top: 51px;
+          transform-origin: 0 0;
+          transform: rotate(0deg) scale(1, -1);
+        }
+        ._2021-coast-capital {
+          color: var(--colours-neutrals-gray, #626262);
+          text-align: left;
+          font: var(--web-paragraph-small, 400 14px/21px "Coast Sans", sans-serif);
+          position: absolute;
+          left: calc(50% - 571px);
+          top: calc(50% - 10.5px);
+        }
+        .contact-us {
+          color: var(--colours-neutrals-gray, #626262);
+          text-align: left;
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+          position: absolute;
+          left: calc(50% - -358px);
+          top: calc(50% - 10.5px);
+        }
+        .privacy {
+          color: var(--colours-neutrals-gray, #626262);
+          text-align: left;
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+          position: absolute;
+          left: calc(50% - -461px);
+          top: calc(50% - 10.5px);
+        }
+        .legal {
+          color: var(--colours-neutrals-gray, #626262);
+          text-align: left;
+          font: 400 14px/21px "Coast Sans", sans-serif;
+          text-decoration: underline;
+          position: absolute;
+          left: calc(50% - -534px);
+          top: calc(50% - 10.5px);
+        }
+        .path,
+        .path * {
+          box-sizing: border-box;
+        }
+        .path {
+          position: relative;
+          overflow: visible;
+        }
+        
+        .message {
+            background: linear-gradient(
+              to left,
+              rgba(208, 2, 27, 0.08),
+              rgba(208, 2, 27, 0.08)
+            ),
+            linear-gradient(to left, #ffffff, #ffffff);
+              border-radius: 2px;
+              border-style: solid;
+              border-color: #d0021b;
+              border-width: 1px 1px 1px 8px;
+              padding: 20px 24px 20px 24px;
+              display: flex;
+              flex-direction: row;
+              gap: 0px;
+              align-items: center;
+              justify-content: flex-start;
+              align-self: stretch;
+              flex-shrink: 0;
+              position: relative;
+              box-shadow: var(
+                --container-shadow-box-shadow,
+                0px 2px 2px 0px rgba(0, 0, 0, 0.1),
+                0px 0px 2px 0px rgba(0, 0, 0, 0.12)
+              );
+        }
+        .message .messageText {
+              color: var(--colours-neutrals-gray, #626262);
+              text-align: left;
+              font: var(--web-paragraph-small, 400 14px/21px "Coast Sans", sans-serif);
+              position: relative;
+              align-self: stretch;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+        }
+        .footerContainer {    
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              height: 3 rem;            /* Footer height */
+               
+        }
+        
+        .rectangle-7 {
+            background:transparent;
+        }
+
+        .buttonFont , .buttonFont:hover {
+            color:#fafafa;text-decoration: none;
+            font: var( --web-heading-4-label-cta-h-4-whiteon-ocean-blue, 700 16px/20px 'Coast Sans', sans-serif );
+        }
+        
+        @media (-webkit-device-pixel-ratio: 1.25) {
+            * {
+                zoom: 0.966;
+              }
+        }
+
+        @media (-webkit-device-pixel-ratio: 1.50) {
+            * {
+                zoom: 0.936;
+              }
+        }
+
+        @media (-webkit-device-pixel-ratio: 1.75) {
+            * {
+                zoom: 0.91;
+              }
+        }
+      </style>
+      
+      <script>
+         function performValidation ()
+          {
+            
+            var checkbox = document.getElementById('{!$Component.loginPage:j_id1:agreeTerm}');
+            var userName = document.getElementById('{!$Component.loginPage:j_id1:username}');
+            var re = /\S+@\S+\.\S+/;
+
+            if (checkbox.checked == false)
+            {
+                showErrorMessage ('Check the terms and condition box below to indicate your acceptance');
+                return false;
+            }
+            
+            if (!re.test(userName.value))
+            {
+
+                showErrorMessage ('Please enter a valid username');
+                return false;
+                
+            }
+            
+            return true;   
+          
+          }
+          
+          function pressEnter()
+          {
+              if (event.keyCode == 13 && performValidation == true) {
+                  login();
+                  return false;
+              }
+          }
+      </script>
+    
+      <apex:form >
+          <apex:actionFunction name="showErrorMessage" action="{!showErrorMessage}" rerender="error">
+              <apex:param name="message" assignTo="{!message}" value="" />
+          </apex:actionFunction>
+          <svg
+            class="group-104"
+            width="251"
+            height="265"
+            viewBox="0 0 251 265"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+                <path
+                  d="M38.4902 88.8753C38.4902 34.954 77.7937 0 126.584 0C171.309 0 208.173 27.3671 212.51 73.4305H167.243C163.448 48.2311 145.558 39.0184 126.584 39.0184C104.628 39.0184 83.4859 56.089 83.4859 89.1462C83.4859 122.203 104.628 139.274 126.584 139.274C145.558 139.274 162.906 128.165 167.243 102.965H212.51C206.275 149.029 171.309 178.021 126.584 178.021C77.7937 178.021 38.4902 143.067 38.4902 88.8753Z"
+                  fill="#F4F4F4"
+                />
+                <path
+                  d="M125.5 238.447C148.269 238.447 168.056 249.285 178.356 265.001H251C229.857 216.499 181.88 188.59 125.229 188.59C70.2041 188.861 22.4978 217.312 0 265.001H72.6436C82.9438 249.285 102.731 238.447 125.5 238.447Z"
+                  fill="#F4F4F4"
+                />
+            </svg>
+      <center>
+        
+        <div class="all-contents">
+        <div class="blue-container">
+          <div class="logo">
+            <div class="brand-logo-foam-white">
+              <div class="coast-capital-logotype-rgb-foam-white">
+                <div class="logo2">
+
+                  <svg
+                    class="group"
+                    width="175"
+                    height="31"
+                    viewBox="0 0 175 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 15.5142C0 9.8701 4.04189 6.21136 9.05941 6.21136C13.6588 6.21136 17.3941 9.07596 17.8958 13.8976H13.2407C12.7947 11.2882 11.0107 10.2955 9.05941 10.2955C6.80153 10.2955 4.62727 12.0824 4.62727 15.5426C4.62727 19.0028 6.80153 20.7612 9.05941 20.7612C11.0107 20.7612 12.7947 19.7969 13.2407 17.1592H17.8958C17.3941 21.9808 13.6588 24.8454 9.05941 24.8454C4.04189 24.817 0 21.1583 0 15.5142Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M18.9272 15.5142C18.9272 9.8701 22.997 6.21136 28.2653 6.21136C33.5337 6.21136 37.6035 9.8701 37.6035 15.5142C37.6035 21.1583 33.5337 24.817 28.2653 24.817C22.997 24.817 18.9272 21.1583 18.9272 15.5142ZM32.9484 15.5142C32.9484 12.054 30.7462 10.2672 28.2654 10.2672C25.7566 10.2672 23.5545 12.054 23.5545 15.5142C23.5545 18.9744 25.7566 20.7329 28.2654 20.7329C30.7462 20.7612 32.9484 18.9744 32.9484 15.5142Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M38.2725 19.7685C38.2725 16.1665 40.391 14.635 46.1333 13.8975C49.0044 13.5005 49.7292 13.3019 49.7292 12.0823C49.7292 10.806 48.6421 9.98353 46.8023 9.98353C44.6002 9.98353 43.6245 11.0613 43.5409 12.7063H39.0252C39.053 8.67887 42.2587 6.18298 46.7466 6.18298C51.0672 6.18298 54.245 7.74291 54.245 12.8765V18.6908C54.245 20.903 54.3007 22.3779 54.5516 24.3632H50.1194C49.9522 23.5691 49.8686 22.6898 49.8407 21.4986C48.9208 23.2855 46.8859 24.7887 43.9033 24.7887C40.4468 24.817 38.2725 22.9167 38.2725 19.7685ZM49.7292 16.2232C48.8929 16.5636 47.6943 16.7905 46.1891 16.989C43.7082 17.3577 42.844 18.0952 42.844 19.4282C42.844 20.5059 43.4852 21.2717 45.1856 21.2717C47.3041 21.2717 49.7292 19.3998 49.7292 16.2232Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M55.4157 18.4355H59.8757C60.1824 20.4492 61.4089 21.1016 63.4159 21.1016C65.2278 21.1016 66.2313 20.4776 66.2313 19.4282C66.2313 18.2086 65.3671 17.7548 62.5239 17.4428C57.3112 16.8189 55.7781 14.9753 55.7781 11.7987C55.7781 8.50871 58.705 6.21136 62.8862 6.21136C67.179 6.21136 69.7435 8.19673 70.1895 12.366H65.7574C65.618 10.8344 64.5866 10.0686 62.8862 10.0686C61.2695 10.0686 60.2381 10.6642 60.2381 11.742C60.2381 12.9049 61.1859 13.2736 63.7782 13.699C69.2975 14.6066 70.7191 16.4502 70.7191 19.3998C70.7191 22.1793 68.4891 24.8738 63.4437 24.8738C57.8966 24.817 55.6945 22.3779 55.4157 18.4355Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M73.6461 17.8399V10.6075H70.8586V6.60843H73.6461V1.84357H78.1619V6.6368H83.04V10.6642H78.1619V17.3578C78.1619 20.194 79.249 20.7045 80.6985 20.7045C81.5905 20.7045 82.3152 20.5627 83.1236 20.2507V24.3916C82.2037 24.6469 81.3396 24.8454 79.8344 24.8454C75.7367 24.817 73.6461 23.1153 73.6461 17.8399Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M83.8205 15.5142C83.8205 9.81338 87.5558 6.21136 92.4897 6.21136C96.9775 6.21136 100.35 8.99087 100.936 13.6139H98.0926C97.5908 10.409 95.3887 8.76397 92.5175 8.76397C89.2283 8.76397 86.6916 11.2031 86.6916 15.5426C86.6916 19.882 89.2283 22.3212 92.5175 22.3212C95.3887 22.3212 97.5908 20.6761 98.0926 17.4712H100.936C100.35 22.0659 97.0054 24.8738 92.4897 24.8738C87.5836 24.817 83.8205 21.1867 83.8205 15.5142Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M101.688 19.882C101.688 16.5352 103.668 14.9753 109.187 14.2663C113.117 13.7841 113.981 13.3303 113.981 11.7137C113.981 9.72829 112.309 8.67889 109.772 8.67889C107.068 8.67889 105.479 9.98355 105.173 12.4511H102.441C102.72 8.65052 105.535 6.21136 109.772 6.21136C113.981 6.21136 116.741 7.85638 116.741 12.0824V19.6267C116.741 21.3852 116.852 22.9451 117.02 24.4483H114.344C114.176 23.484 114.065 22.4346 114.037 20.506C113.257 22.4913 110.915 24.8738 107.208 24.8738C103.863 24.817 101.688 22.9735 101.688 19.882ZM114.009 15.0888C112.978 15.7411 111.5 16.0531 109.27 16.3367C105.842 16.7621 104.476 17.7265 104.476 19.6835C104.476 21.4703 105.647 22.5197 107.737 22.5197C110.999 22.5197 114.009 19.9387 114.009 15.0888Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M119.055 6.60842H121.786V9.47301C123.097 7.40256 125.382 6.18298 128.198 6.18298C132.881 6.18298 136.504 9.81336 136.504 15.4858C136.504 21.1583 132.909 24.7887 128.198 24.7887C125.382 24.7887 123.097 23.5974 121.786 21.5837V31H119.055V6.60842ZM133.689 15.5142C133.689 11.2031 131.069 8.73559 127.696 8.73559C124.323 8.73559 121.731 11.1747 121.731 15.5142C121.731 19.8536 124.323 22.2928 127.696 22.2928C131.069 22.2928 133.689 19.8536 133.689 15.5142Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M137.48 2.12719C137.48 0.964334 138.344 0.113464 139.459 0.113464C140.602 0.113464 141.494 0.992696 141.494 2.12719C141.494 3.23332 140.602 4.14091 139.459 4.14091C138.344 4.14091 137.48 3.23332 137.48 2.12719ZM138.093 6.60843H140.825V24.3916H138.093V6.60843Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M145.202 18.237V9.13268H141.968V6.60843H145.202V1.84357H147.989V6.6368H153.787V9.16104H147.989V18.0668C147.989 21.4136 149.216 22.2928 151.139 22.2928C152.142 22.2928 153.062 22.1226 154.094 21.6688V24.2782C153.202 24.5901 152.17 24.8738 150.832 24.8738C146.958 24.817 145.202 22.9735 145.202 18.237Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M154.763 19.882C154.763 16.5352 156.742 14.9753 162.261 14.2663C166.191 13.7841 167.056 13.3303 167.056 11.7137C167.056 9.72829 165.383 8.67889 162.846 8.67889C160.143 8.67889 158.554 9.98355 158.247 12.4511H155.515C155.794 8.65052 158.609 6.21136 162.846 6.21136C167.056 6.21136 169.815 7.85638 169.815 12.0824V19.6267C169.815 21.3852 169.927 22.9451 170.094 24.4483H167.418C167.251 23.484 167.139 22.4346 167.111 20.506C166.331 22.4913 163.989 24.8738 160.282 24.8738C156.937 24.817 154.763 22.9735 154.763 19.882ZM167.084 15.0888C166.052 15.7411 164.575 16.0531 162.345 16.3367C158.916 16.7621 157.55 17.7265 157.55 19.6835C157.55 21.4703 158.721 22.5197 160.812 22.5197C164.045 22.5197 167.084 19.9387 167.084 15.0888Z"
+                      fill="#FAFAFA"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M172.185 0H175V24.42H172.185V0Z"
+                      fill="#FAFAFA"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-frame"></div>
+        </div>
+        <div class="frame-9">
+            <apex:pageMessages id="error" escape="false"/>
+            <div class="frame-8">
+                <div class="log-in-to-deposit-agent-portal">Log In to Deposit Agent Portal</div>
+            </div>
+          
+            <div class="frame-5">
+              <div class="form-fields">
+                <div style="{!IF( showUsername == 'false', 'display:none;', '')}" class="web-forms-inputs-input-text-one-item-master">
+                    <apex:outputLabel styleClass="label2" value="Username" for="username" />
+                    <apex:inputText id="username" value="{!username}" styleClass="field-placeholder-text-trail-icon-placeholder"/>
+                    <!--
+                    <apex:inputCheckbox styleClass="label2" id="agreeTerm"/>
+                    <apex:outputLabel styleClass="label2" value="Agree the terms to proceed" for="agreeTerm"/>
+                    -->
+                </div>
+                <div style="{!IF( showLogin == 'false', 'display:none;', '')}" class="web-forms-inputs-input-text-one-item-master">
+                    <apex:outputLabel styleClass="label2" value="Password" for="password" />
+                    <apex:inputSecret id="password" value="{!password}" onkeypress="pressEnter();" styleClass="field-placeholder-text-trail-icon-placeholder"/>
+                    <!--
+                    <apex:inputCheckbox styleClass="label2" id="agreeTerm"/>
+                    <apex:outputLabel styleClass="label2" value="Agree the terms to proceed" for="agreeTerm"/>
+                    -->
+                </div>
+              </div>
+    
+              <div class="web-buttons">
+                <!--
+                <div class="web-button-large" style="{!IF( showNext == 'false', 'display:none;', '')}">
+                  <div class="label3"><apex:commandLink id="btn_next" style="color:#fafafa;text-decoration: none;" action="{!next}" onclick="return performValidation();" styleClass="slds-button slds-button_brand" value="Continue"/></div>
+                  <div class="outline-interactive-white-forward">
+
+                      <svg
+                        class="outline-interactive-white-forward2"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                      <path
+                          d="M8.93698 15.2748L15.4648 8.7694C15.5816 8.65252 15.6648 8.53162 15.7144 8.40673C15.7649 8.28183 15.7901 8.15253 15.7901 8.01883C15.7901 7.88513 15.7649 7.75583 15.7144 7.63093C15.6648 7.50604 15.5816 7.38515 15.4648 7.26826L8.93698 0.73887C8.73692 0.538717 8.49523 0.434237 8.21194 0.42543C7.92865 0.417424 7.67856 0.521904 7.46169 0.73887C7.26162 0.939023 7.16159 1.18481 7.16159 1.47623C7.16159 1.76846 7.26162 2.01464 7.46169 2.2148L12.2141 6.96803H1.25922C0.975924 6.96803 0.730244 7.07211 0.522174 7.28027C0.314104 7.48923 0.21007 7.73541 0.21007 8.01883C0.21007 8.30225 0.314104 8.54844 0.522174 8.75739C0.730244 8.96555 0.975924 9.06963 1.25922 9.06963H12.2141L7.46169 13.8229C7.26162 14.023 7.15759 14.2608 7.14959 14.5362C7.14078 14.8116 7.24482 15.0578 7.46169 15.2748C7.66176 15.4749 7.90784 15.575 8.19994 15.575C8.49123 15.575 8.73692 15.4749 8.93698 15.2748Z"
+                          fill="#FAFAFA"/>
+                      </svg>
+                    </div>
+                </div>
+                -->
+                
+                <apex:commandLink id="btn_next" type="submit" action="{!next}"  onclick="return performValidation();" styleClass="buttonFont slds-button slds-button_brand web-button-large" value="Continue" style="{!IF( showNext == 'false', 'display:none;', '')};">
+                  <div class="outline-interactive-white-forward">
+
+                    <svg
+                      class="outline-interactive-white-forward2"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                    <path
+                        d="M8.93698 15.2748L15.4648 8.7694C15.5816 8.65252 15.6648 8.53162 15.7144 8.40673C15.7649 8.28183 15.7901 8.15253 15.7901 8.01883C15.7901 7.88513 15.7649 7.75583 15.7144 7.63093C15.6648 7.50604 15.5816 7.38515 15.4648 7.26826L8.93698 0.73887C8.73692 0.538717 8.49523 0.434237 8.21194 0.42543C7.92865 0.417424 7.67856 0.521904 7.46169 0.73887C7.26162 0.939023 7.16159 1.18481 7.16159 1.47623C7.16159 1.76846 7.26162 2.01464 7.46169 2.2148L12.2141 6.96803H1.25922C0.975924 6.96803 0.730244 7.07211 0.522174 7.28027C0.314104 7.48923 0.21007 7.73541 0.21007 8.01883C0.21007 8.30225 0.314104 8.54844 0.522174 8.75739C0.730244 8.96555 0.975924 9.06963 1.25922 9.06963H12.2141L7.46169 13.8229C7.26162 14.023 7.15759 14.2608 7.14959 14.5362C7.14078 14.8116 7.24482 15.0578 7.46169 15.2748C7.66176 15.4749 7.90784 15.575 8.19994 15.575C8.49123 15.575 8.73692 15.4749 8.93698 15.2748Z"
+                        fill="#FAFAFA"/>
+                    </svg>
+                  </div>
+                </apex:commandLink>
+                <!--
+                <div class="web-button-large" style="{!IF( showLogin == 'false', 'display:none;', '')}">
+                  <div class="outline-interactive-white-padlock">
+                    <div class="outline-interactive-white-padlock2">
+                      <div class="rectangle-7"></div>
+                      <svg
+                        class="base-icons-lock-padlock"
+                        width="16"
+                        height="21"
+                        viewBox="0 0 16 21"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 21C1.45 21 0.979333 20.8043 0.588 20.413C0.196 20.021 0 19.55 0 19V9C0 8.45 0.196 7.979 0.588 7.587C0.979333 7.19567 1.45 7 2 7H3V5C3 3.61667 3.48767 2.43733 4.463 1.462C5.43767 0.487333 6.61667 0 8 0C9.38333 0 10.5627 0.487333 11.538 1.462C12.5127 2.43733 13 3.61667 13 5V7H14C14.55 7 15.021 7.19567 15.413 7.587C15.8043 7.979 16 8.45 16 9V19C16 19.55 15.8043 20.021 15.413 20.413C15.021 20.8043 14.55 21 14 21H2ZM8 16C8.55 16 9.021 15.8043 9.413 15.413C9.80433 15.021 10 14.55 10 14C10 13.45 9.80433 12.979 9.413 12.587C9.021 12.1957 8.55 12 8 12C7.45 12 6.97933 12.1957 6.588 12.587C6.196 12.979 6 13.45 6 14C6 14.55 6.196 15.021 6.588 15.413C6.97933 15.8043 7.45 16 8 16ZM5 7H11V5C11 4.16667 10.7083 3.45833 10.125 2.875C9.54167 2.29167 8.83333 2 8 2C7.16667 2 6.45833 2.29167 5.875 2.875C5.29167 3.45833 5 4.16667 5 5V7Z"
+                          fill="#FAFAFA"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="label3"><apex:commandLink id="btn_login" style="color:#fafafa;text-decoration: none;" action="{!Login}" styleClass="slds-button slds-button_brand" value="Login"/></div>
+                  
+                </div>
+                -->
+                <apex:commandLink id="btn_login" type="submit" action="{!Login}" styleClass="buttonFont slds-button slds-button_brand web-button-large" value="Login" style="{!IF( showLogin == 'false', 'display:none;', '')}">
+                  <div class="outline-interactive-white-forward">
+
+                    <svg
+                      class="outline-interactive-white-forward2"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                    <path
+                        d="M8.93698 15.2748L15.4648 8.7694C15.5816 8.65252 15.6648 8.53162 15.7144 8.40673C15.7649 8.28183 15.7901 8.15253 15.7901 8.01883C15.7901 7.88513 15.7649 7.75583 15.7144 7.63093C15.6648 7.50604 15.5816 7.38515 15.4648 7.26826L8.93698 0.73887C8.73692 0.538717 8.49523 0.434237 8.21194 0.42543C7.92865 0.417424 7.67856 0.521904 7.46169 0.73887C7.26162 0.939023 7.16159 1.18481 7.16159 1.47623C7.16159 1.76846 7.26162 2.01464 7.46169 2.2148L12.2141 6.96803H1.25922C0.975924 6.96803 0.730244 7.07211 0.522174 7.28027C0.314104 7.48923 0.21007 7.73541 0.21007 8.01883C0.21007 8.30225 0.314104 8.54844 0.522174 8.75739C0.730244 8.96555 0.975924 9.06963 1.25922 9.06963H12.2141L7.46169 13.8229C7.26162 14.023 7.15759 14.2608 7.14959 14.5362C7.14078 14.8116 7.24482 15.0578 7.46169 15.2748C7.66176 15.4749 7.90784 15.575 8.19994 15.575C8.49123 15.575 8.73692 15.4749 8.93698 15.2748Z"
+                        fill="#FAFAFA"/>
+                    </svg>
+                  </div>
+                </apex:commandLink>
+                </div>
+                <div style="{!IF( showUsername == 'false', 'display:none;', '')}" class="frame-10">
+                    <apex:inputCheckbox id="agreeTerm" styleclass="outline-interactive-blue-checkbox"/>
+                    <div class="i-have-read-and-agree-to-the-terms-and-conditions">
+                      <span>
+                        <span class="i-have-read-and-agree-to-the-terms-and-conditions-span">
+                        I have read and agree to the</span>
+                        <span class="i-have-read-and-agree-to-the-terms-and-conditions-span2">
+                        </span>
+                        <a href="https://www.coastcapitalsavings.com/media/qkjo5dx4/agency_deposits_on-line_agreement-legal.pdf" target="_blank" class="i-have-read-and-agree-to-the-terms-and-conditions-span3">terms and conditions
+                        </a>
+                        <span class="i-have-read-and-agree-to-the-terms-and-conditions-span4">
+                        .
+                        </span></span>
+                    </div>
+                    
+                    
+              </div>
+                
+              
+              
+              
+              <div class="forgot-your-username-forgot-your-password">
+                <span>
+                  <span class="forgot-your-username-forgot-your-password-span">
+    
+                      <a href="{!$Page.AWForgotPassword}" class="i-have-read-and-agree-to-the-terms-and-conditions-span3">Forgot your password?</a>
+                  </span>
+                </span>
+              </div>
+            </div>
+            </div>
+          </div>
+              
+          </center>
+          
+            <div class="footerContainer">
+                <div class="web-footer-simple">
+                <div class="rectangle"></div>
+                <div class="_2021-coast-capital">© 2025 Coast Capital Savings</div>
+                <div class="contact-us"></div>
+            </div>
+
+        </div>
+
+       
+    </apex:form>
+</apex:page>
