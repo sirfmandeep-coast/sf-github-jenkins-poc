@@ -264,6 +264,12 @@
                 <identifier>RecordSource_cField2</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.POC_Test_1__c</fieldItem>
+                <identifier>RecordPOC_Test_1__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-f3402442-88e6-40e6-800e-2164b28299b8</name>
         <type>Facet</type>
     </flexiPageRegions>
