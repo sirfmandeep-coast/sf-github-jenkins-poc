@@ -3,7 +3,7 @@
  */
 global with sharing class AWSiteController {
 
-
+//NOTE
     global String username {get; set;}
     global String password {get; set;}
     global String showUsername {get; set;}
