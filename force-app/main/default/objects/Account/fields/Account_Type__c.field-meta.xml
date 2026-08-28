@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IMAGE(&apos;/resource/nCinoLogo&apos;, &quot;nCino Logo&quot;, 40, 104)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Account Type</label>
+    <label>Account Type TEST UPDATE</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <type>Text</type>
