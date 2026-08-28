@@ -4,6 +4,6 @@
     <formula>IF(  ISBLANK(Other_Financial_Institution__c), false,  CONTAINS(  $Label.MemberAuthBypassValues ,  Other_Financial_Institution__c ) )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>ByPassMemberAuth</label>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>
